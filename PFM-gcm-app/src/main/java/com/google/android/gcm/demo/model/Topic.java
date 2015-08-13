@@ -47,36 +47,29 @@ public class Topic {
         this.url = value;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
     @Override
-    public boolean equals(Object objeto) {
-        // If the registrationId is the same, then it should be the same
-        // device
-        return this.url.equals(((Topic) objeto)
-                .getUrl());
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Topic topic = (Topic) o;
+
+        return url.equals(topic.url);
+
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
+    @Override
+    public int hashCode() {
+        return url.hashCode();
+    }
+
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("Topic[");
-        if (name != null) {
-            builder.append(" name=").append(name);
-        }
-        if (url != null) {
-            builder.append(" url=").append(url);
-        }
-
-        builder.append(" ]");
-        return builder.toString();
+        return "Topic{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", subscribed=" + subscribed +
+                '}';
     }
 
     public boolean isSubscribed() {

@@ -26,6 +26,7 @@ limitations under the License.
     <!-- Main Menu -->
     <string name="main_menu_instanceid">Registrations</string>
     <string name="main_menu_topics">Topics</string>
+    <string name="main_menu_matches">Matches</string>
 
     <!-- Overflow Menu -->
     <string name="show_logs">Show Logs</string>
@@ -51,6 +52,18 @@ limitations under the License.
     <string name="topics_subscribing">Subscribing %1$s</string>
     <string name="topics_unsubscribing">Unsubscribing from %1$s</string>
     <string name="topics_no_topic_subscribed">No hay partidos disponibles</string>
+
+
+    <!-- Matches Fragment -->
+    <string name="matches_description">Tus partidos en directo con informacion minuto a minuto</string>
+    <string name="matches_active_subscriptions">Partidos:</string>
+    <string name="matches_subscribe">Subscribirse</string>
+    <string name="matches_unsubscribe">Borrar</string>
+    <string name="matches_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
+    <string name="matches_already_subscribed">Ya te subscribiste.</string>
+    <string name="matches_subscribing">Subscribing %1$s</string>
+    <string name="matches_unsubscribing">Unsubscribing from %1$s</string>
+    <string name="matches_no_topic_subscribed">No hay partidos disponibles, suscribete a un partido para recibir informacion al instante</string>
 
     <string name="notification_intent_received">Received notification intent: %1s</string>
 

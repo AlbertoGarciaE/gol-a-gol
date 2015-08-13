@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/InstanceIdHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/MatchHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/ThirdPartyServerHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/service/LoggingService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/service/SportEventHandler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/ui/MainActivity.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

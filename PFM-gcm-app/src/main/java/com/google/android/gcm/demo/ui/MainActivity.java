@@ -54,7 +54,7 @@ import android.widget.TextView;
 import com.google.android.gcm.demo.R;
 import com.google.android.gcm.demo.service.LoggingService;
 import com.google.android.gcm.demo.service.LoggingService.Logger;
-import com.google.android.gcm.demo.service.RegistrationIntentService;
+import com.google.android.gcm.demo.service.SportEventHandler;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
@@ -102,6 +102,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         mLogsUI.setText(Html.fromHtml(stringBuilder.toString()));
                         List<Fragment> fragments = getSupportFragmentManager().getFragments();
                         for (Fragment fragment : fragments) {
+                            if (fragment instanceof RefreshableFragment && fragment.isVisible()) {
+                                ((RefreshableFragment) fragment).refresh();
+                            }
+                        }
+                    case SportEventHandler.ACTION_REFRESH_UI:
+                        //TODO refresh fragment MatchFragment
+                        List<Fragment> fragments2 = getSupportFragmentManager().getFragments();
+                        for (Fragment fragment : fragments2) {
                             if (fragment instanceof RefreshableFragment && fragment.isVisible()) {
                                 ((RefreshableFragment) fragment).refresh();
                             }
@@ -206,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if ("gcm_test_app_notification_click_action".equals(launchIntent.getAction())) {
             Bundle data = launchIntent.getExtras();
             data.isEmpty(); // Force the bundle to unparcel so that toString() works
-            String format = getResources().getString(R.string   .notification_intent_received);
+            String format = getResources().getString(R.string.notification_intent_received);
             mLogger.log(Log.INFO, String.format(format, data));
         }
 

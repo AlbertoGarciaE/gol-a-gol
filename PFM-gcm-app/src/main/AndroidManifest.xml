@@ -92,8 +92,12 @@ limitations under the License.
             android:name=".service.MyInstanceIDListenerService"
             android:exported="false" >
             <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID"/>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
+        </service>
+        <service
+            android:name=".service.SportEventHandler"
+            android:exported="false" >
         </service>
     </application>
 

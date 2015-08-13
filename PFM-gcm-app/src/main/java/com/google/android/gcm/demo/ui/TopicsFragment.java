@@ -38,6 +38,7 @@ import com.google.android.gcm.demo.logic.AsyncResponse;
 import com.google.android.gcm.demo.logic.HttpRequest;
 import com.google.android.gcm.demo.logic.PubSubHelper;
 import com.google.android.gcm.demo.logic.ThirdPartyServerHelper;
+import com.google.android.gcm.demo.logic.TopicHelper;
 import com.google.android.gcm.demo.model.Constants;
 import com.google.android.gcm.demo.model.Topic;
 import com.google.android.gcm.demo.service.LoggingService;
@@ -68,7 +69,8 @@ public class TopicsFragment extends AbstractFragment
     private LoggingService.Logger mLogger;
     private Context mContext;
 
-    private JSONArray mTopics;
+    private TopicHelper mTopics;
+    // private List<Topic> mListTopics;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedState) {
@@ -76,6 +78,7 @@ public class TopicsFragment extends AbstractFragment
         mPubSubHelper = new PubSubHelper(getActivity());
         mThirdpartyServer = new ThirdPartyServerHelper();
         mContext = getActivity().getApplicationContext();
+        mTopics = TopicHelper.getInstance();
         View view = inflater.inflate(R.layout.fragment_topics, container, false);
         TextView description = (TextView) view.findViewById(R.id.topics_description);
         description.setMovementMethod(LinkMovementMethod.getInstance());
@@ -110,26 +113,26 @@ public class TopicsFragment extends AbstractFragment
      */
     private void showTopics() {
         int subscribedTopics = 0;
-        JSONArray result = this.mTopics;
+        //JSONArray result = this.mTopics;
         float density = getActivity().getResources().getDisplayMetrics().density;
-        LinearLayout sendersList = new LinearLayout(getActivity());
-        sendersList.setOrientation(LinearLayout.VERTICAL);
-        if (result != null) {
-            List<Topic> topics = new ArrayList<>();
-            for (int i = 0; i < result.length(); i++) {
-                JSONObject j = result.optJSONObject(i);
-                try {
-                    topics.add(new Topic(j.getString("name"), j.getString("url")));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            for (Topic topic : topics) {
+        LinearLayout LayoutTopicList = new LinearLayout(getActivity());
+        LayoutTopicList.setOrientation(LinearLayout.VERTICAL);
+//        if (result != null) {
+//            List<Topic> topics = new ArrayList<>();
+//            for (int i = 0; i < result.length(); i++) {
+//                JSONObject j = result.optJSONObject(i);
+//                try {
+//                    topics.add(new Topic(j.getString("name"), j.getString("url")));
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+        if (mTopics != null) {
+            for (Topic topic : mTopics.getListTopics()) {
                 if (!topic.getUrl().isEmpty()) {
                     subscribedTopics++;
                     LinearLayout row = (LinearLayout) getActivity().getLayoutInflater()
-                            .inflate(R.layout.widget_icon_text_button_row, sendersList, false);
+                            .inflate(R.layout.widget_icon_text_button_row, LayoutTopicList, false);
                     ImageView icon = (ImageView) row.findViewById(R.id.widget_itbr_icon);
                     TextView label = (TextView) row.findViewById(R.id.widget_itbr_text);
                     Button button = (Button) row.findViewById(R.id.widget_itbr_button);
@@ -145,28 +148,39 @@ public class TopicsFragment extends AbstractFragment
                     }
                     button.setTag(R.id.tag_subscriptionState, topic.isSubscribed());
                     button.setTag(R.id.tag_topic, topic.getUrl());
+                    button.setTag(R.id.tag_topic_name, topic.getName());
                     button.setOnClickListener(this);
                     row.setPadding((int) (16 * density), 0, 0, 0);
-                    sendersList.addView(row);
+                    LayoutTopicList.addView(row);
                 }
             }
-        }
-        if (subscribedTopics == 0) {
-            TextView noTopics = new TextView(getActivity());
-            noTopics.setText(R.string.topics_no_topic_subscribed);
-            noTopics.setTypeface(null, Typeface.ITALIC);
-            noTopics.setPadding((int) (16 * density), 0, 0, 0);
-            sendersList.addView(noTopics);
-        }
 
-        FrameLayout topicsView = (FrameLayout) getActivity().findViewById(R.id.topics_list_wrapper);
-        topicsView.removeAllViews();
-        topicsView.addView(sendersList);
+
+            if (subscribedTopics == 0)
+
+            {
+                TextView noTopics = new TextView(getActivity());
+                noTopics.setText(R.string.topics_no_topic_subscribed);
+                noTopics.setTypeface(null, Typeface.ITALIC);
+                noTopics.setPadding((int) (16 * density), 0, 0, 0);
+                LayoutTopicList.addView(noTopics);
+            }
+
+            FrameLayout topicsView = (FrameLayout) getActivity().findViewById(R.id.topics_list_wrapper);
+            topicsView.removeAllViews();
+            topicsView.addView(LayoutTopicList);
+        }
+    }
+
+    private void updateTopic(View v) {
+
+
     }
 
     private void subscribe(View v) {
         String senderId = (String) getResources().getText(R.string.gcm_MyServer_SenderId);
         String topic = (String) v.getTag(R.id.tag_topic);
+        //String topicName = (String) v.getTag(R.id.tag_topic_name);
         String gcmToken = (senderId != null) ? PreferenceManager.getDefaultSharedPreferences(mContext).getString(Constants.GCM_TOKEN, "") :
                 null;
         if (gcmToken == null || gcmToken.isEmpty()) {
@@ -178,6 +192,7 @@ public class TopicsFragment extends AbstractFragment
                     .show();
             mPubSubHelper.subscribeTopic(senderId, gcmToken, topic, null);
         }
+        mTopics.updateTopicSubscriptionState(topic, true);
     }
 
     private void unsubscribe(View v) {
@@ -194,12 +209,25 @@ public class TopicsFragment extends AbstractFragment
                     .show();
             mPubSubHelper.unsubscribeTopic(senderId, gcmToken, topic);
         }
+        mTopics.updateTopicSubscriptionState(topic, false);
     }
 
     @Override
     public void processFinish(String output) {
         try {
-            this.mTopics = new JSONArray(output);
+            JSONArray result = new JSONArray(output);
+            List<Topic> mListTopics = new ArrayList<>();
+            if (result != null) {
+                for (int i = 0; i < result.length(); i++) {
+                    JSONObject j = result.optJSONObject(i);
+                    try {
+                        mListTopics.add(new Topic(j.getString("name"), j.getString("url")));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            mTopics.setListTopics(mListTopics);
         } catch (JSONException e) {
             e.printStackTrace();
         }

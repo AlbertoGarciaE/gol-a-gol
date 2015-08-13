@@ -20,6 +20,16 @@ import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
+import static com.google.android.gcm.demo.service.SportEventHandler.EXTRA_AWAY;
+import static com.google.android.gcm.demo.service.SportEventHandler.EXTRA_AWAY_SCORE;
+import static com.google.android.gcm.demo.service.SportEventHandler.EXTRA_COMMENT;
+import static com.google.android.gcm.demo.service.SportEventHandler.EXTRA_LOCAL;
+import static com.google.android.gcm.demo.service.SportEventHandler.EXTRA_LOCAL_SCORE;
+import static com.google.android.gcm.demo.service.SportEventHandler.EXTRA_STATUS;
+import static com.google.android.gcm.demo.service.SportEventHandler.EXTRA_MATCHID;
+
+import static com.google.android.gcm.demo.service.SportEventHandler.startActionRegularAction;
+
 
 /**
  * Service used for receiving GCM messages. When a message is received this service will log it.
@@ -35,6 +45,7 @@ public class GcmService extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
         sendNotification("Received: " + data.toString());
+        sendNotificationMatch(data);
     }
 
     @Override
@@ -57,5 +68,19 @@ public class GcmService extends GcmListenerService {
     // a GCM message.
     private void sendNotification(String msg) {
         logger.log(Log.INFO, msg);
+    }
+
+    // Put the message into a notification and post it.
+    // This is just one simple example of what you might choose to do with
+    // a GCM message.
+    private void sendNotificationMatch(Bundle data) {
+        String Local = data.getString(EXTRA_LOCAL);
+        String Away = data.getString(EXTRA_AWAY);
+        String LocalScore = data.getString(EXTRA_LOCAL_SCORE);
+        String AwayScore = data.getString(EXTRA_AWAY_SCORE);
+        String Status = data.getString(EXTRA_STATUS);
+        String comment = data.getString(EXTRA_COMMENT);
+        String matchId = data.getString(EXTRA_MATCHID);
+        startActionRegularAction(this, matchId, Local, Away, LocalScore, AwayScore, Status, comment);
     }
 }

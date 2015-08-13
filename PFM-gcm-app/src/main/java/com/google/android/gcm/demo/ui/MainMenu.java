@@ -35,6 +35,7 @@ public class MainMenu {
         mActivity = a;
         mMenu = new LinkedHashMap<>();
         mMenu.put(a.getText(R.string.main_menu_instanceid), InstanceIdFragment.class);
+        mMenu.put(a.getText(R.string.main_menu_matches), MatchFragment.class);
         mMenu.put(a.getText(R.string.main_menu_topics), TopicsFragment.class);
 
     }

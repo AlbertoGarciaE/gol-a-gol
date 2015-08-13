@@ -22,8 +22,9 @@ limitations under the License.
     <item name="iid_select_api_key" type="id">Select API key</item>
     <item name="tag_senderid" type="id"/>
     <item name="tag_topic" type="id"/>
-    <item name="tag_group" type="id"/>
+    <item name="tag_topic_name" type="id"/>
     <item name="tag_token" type="id"/>
     <item name="tag_subscriptionState" type="id"/>
+    <item name="tag_matchId" type="id"/>
 
 </resources>
