@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.google.android.gcm.demo"
+    package="com.google.android.gcm.GolAGol"
     android:versionCode="4"
     android:versionName="4.0" >
 
@@ -28,17 +28,17 @@ limitations under the License.
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <permission
-        android:name="com.google.android.gcm.demo.permission.C2D_MESSAGE"
+        android:name="com.google.android.gcm.GolAGol.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.google.android.gcm.demo.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.gcm.GolAGol.permission.C2D_MESSAGE" />
 
     <application
         android:icon="@drawable/icon"
         android:label="@string/application_name"
         android:theme="@style/Theme.AppTheme" >
         <activity
-            android:name="com.google.android.gcm.demo.ui.MainActivity"
+            android:name="com.google.android.gcm.GolAGol.ui.MainActivity"
             android:theme="@style/Theme.AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
@@ -53,20 +53,6 @@ limitations under the License.
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.google.android.gcm.demo.ui.addressbook.SelectActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            android:windowSoftInputMode="adjustPan" >
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-
-                <category android:name="com.google.android.gcm.demo.intent.category.SENDER_ID" />
-                <category android:name="com.google.android.gcm.demo.intent.category.API_KEY" />
-                <category android:name="com.google.android.gcm.demo.intent.category.TOKEN" />
-                <category android:name="com.google.android.gcm.demo.intent.category.TOPIC" />
-                <category android:name="com.google.android.gcm.demo.intent.category.GROUP" />
-            </intent-filter>
-        </activity>
 
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
@@ -76,35 +62,33 @@ limitations under the License.
                 <!-- for Gingerbread GSF backward compat -->
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <category android:name="com.google.android.gcm.demo" />
+                <category android:name="com.google.android.gcm.GolAGol" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="com.google.android.gcm.demo.service.GcmService"
+            android:name="com.google.android.gcm.GolAGol.service.GcmService"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
         <service
-            android:name="com.google.android.gcm.demo.service.LoggingService"
+            android:name="com.google.android.gcm.GolAGol.service.LoggingService"
             android:exported="false" />
         <service
-            android:name="com.google.android.gcm.demo.service.RegistrationIntentService"
-            android:exported="false" >
-        </service>
+            android:name="com.google.android.gcm.GolAGol.service.RegistrationIntentService"
+            android:exported="false" />
         <service
-            android:name="com.google.android.gcm.demo.service.MyInstanceIDListenerService"
+            android:name="com.google.android.gcm.GolAGol.service.MyInstanceIDListenerService"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
         <service
-            android:name="com.google.android.gcm.demo.service.SportEventHandler"
-            android:exported="false" >
-        </service>
+            android:name="com.google.android.gcm.GolAGol.service.SportEventHandler"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -53,17 +53,17 @@ public final class R {
 		public static final int common_signin_btn_text_normal_light = 0x7f020059;
 		public static final int common_signin_btn_text_pressed_dark = 0x7f02005a;
 		public static final int common_signin_btn_text_pressed_light = 0x7f02005b;
-		public static final int ic_plusone_medium_off_client = 0x7f020061;
-		public static final int ic_plusone_small_off_client = 0x7f020062;
-		public static final int ic_plusone_standard_off_client = 0x7f020063;
-		public static final int ic_plusone_tall_off_client = 0x7f020064;
+		public static final int ic_plusone_medium_off_client = 0x7f020063;
+		public static final int ic_plusone_small_off_client = 0x7f020064;
+		public static final int ic_plusone_standard_off_client = 0x7f020065;
+		public static final int ic_plusone_tall_off_client = 0x7f020066;
 	}
 	public static final class id {
-		public static final int adjust_height = 0x7f0b0020;
-		public static final int adjust_width = 0x7f0b0021;
-		public static final int none = 0x7f0b0018;
-		public static final int normal = 0x7f0b0014;
-		public static final int wrap_content = 0x7f0b0029;
+		public static final int adjust_height = 0x7f0b0021;
+		public static final int adjust_width = 0x7f0b0022;
+		public static final int none = 0x7f0b0019;
+		public static final int normal = 0x7f0b0015;
+		public static final int wrap_content = 0x7f0b002a;
 	}
 	public static final class integer {
 		public static final int google_play_services_version = 0x7f090003;

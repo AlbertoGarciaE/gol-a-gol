@@ -232,6 +232,7 @@
     <item name="tag_senderid" type="id"/>
     <item name="tag_subscriptionState" type="id"/>
     <item name="tag_token" type="id"/>
+    <item name="tag_token_action" type="id"/>
     <item name="tag_topic" type="id"/>
     <item name="tag_topic_name" type="id"/>
     <!-- From: file:/C:/Users/Usuario/git_mobileApps/PFM-gcm-app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
@@ -315,7 +316,12 @@
     <string name="iid_about_apis">▶ Información sobre el registro</string>
     <string name="iid_about_apis_full_text">Registration has to be done by the client in order for it to receive a registration token. The client must communicate this token back to its server. The server will then use the token to send messages to the client.</string>
     <string name="iid_about_apis_open">▼ Información sobre el registro</string>
+    <string name="iid_field_error_empty">El nombre de usuario no puede estar vacio</string>
     <string name="iid_register">Registrarse</string>
+    <string name="iid_status_exist_no_token">Usted debe registrarte antes de poder usar la aplicación</string>
+    <string name="iid_status_exist_token">Usted esta registrado</string>
+    <string name="iid_status_token_already_registered">Ya se realizó el registro del dispositivo con anterioridad</string>
+    <string name="iid_status_token_not_yet_registered">Aun no realizó el registro del dispositivo</string>
     <string name="iid_token">Nombre:</string>
     <string name="iid_unregister">Borrar cuenta</string>
     <string name="logs">Logs</string>
@@ -328,9 +334,8 @@
     <string name="matches_description">Tus partidos en directo con informacion minuto a minuto</string>
     <string name="matches_no_topic_subscribed">No hay partidos disponibles, suscribete a un partido para recibir informacion al instante</string>
     <string name="matches_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
-    <string name="matches_subscribe">Subscribirse</string>
+    <string name="matches_show_log">Ver</string>
     <string name="matches_subscribing">Subscribing %1$s</string>
-    <string name="matches_unsubscribe">Borrar</string>
     <string name="matches_unsubscribing">Unsubscribing from %1$s</string>
     <string name="notification_intent_received">Received notification intent: %1s</string>
     <string name="show_logs">Show Logs</string>

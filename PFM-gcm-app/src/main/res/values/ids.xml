@@ -26,5 +26,6 @@ limitations under the License.
     <item name="tag_token" type="id"/>
     <item name="tag_subscriptionState" type="id"/>
     <item name="tag_matchId" type="id"/>
+    <item name="tag_token_action" type="id"/>
 
 </resources>

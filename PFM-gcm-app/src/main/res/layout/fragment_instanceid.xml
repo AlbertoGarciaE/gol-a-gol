@@ -63,14 +63,19 @@ limitations under the License.
     </LinearLayout>
 
     <TextView
-        android:id="@+id/iid_about_apis"
+        android:id="@+id/iid_status_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/iid_token_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/iid_about_apis"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/iid_about_apis_full_text"
+        android:id="@+id/iid_full_token_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/iid_about_apis_full_text"
