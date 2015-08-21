@@ -139,25 +139,27 @@ public class SportEventHandler extends IntentService {
      */
     private void handleActionRegularAction(Bundle data) {
         String matchId = data.getString(EXTRA_MATCHID);
-        Match auxMatch = matchHlpr.getMatch(matchId);
-        //TODO format comments
-        if (auxMatch != null) {
-            auxMatch.setLocal(data.getString(EXTRA_LOCAL));
-            auxMatch.setAway(data.getString(EXTRA_AWAY));
-            auxMatch.setLocalScore(Integer.getInteger(data.getString(EXTRA_LOCAL_SCORE)));
-            auxMatch.setAwayScore(Integer.getInteger(data.getString(EXTRA_AWAY_SCORE)));
-            auxMatch.setStatus(data.getString(EXTRA_STATUS));
-            auxMatch.appendLine(data.getString(EXTRA_COMMENT));
-        } else {
-            auxMatch = new Match(data.getString(EXTRA_MATCHID));
-            auxMatch.setLocal(data.getString(EXTRA_LOCAL));
-            auxMatch.setAway(data.getString(EXTRA_AWAY));
-            String aux = data.getString(EXTRA_LOCAL_SCORE);
-            auxMatch.setLocalScore(Integer.parseInt(aux));
-            auxMatch.setAwayScore(Integer.parseInt(data.getString(EXTRA_AWAY_SCORE)));
-            auxMatch.setStatus(data.getString(EXTRA_STATUS));
-            auxMatch.appendLine(data.getString(EXTRA_COMMENT));
-            matchHlpr.addMatch(auxMatch);
+        if (matchId != null && !matchId.isEmpty()) {
+            Match auxMatch = matchHlpr.getMatch(matchId);
+            //TODO format comments
+            if (auxMatch != null) {
+                auxMatch.setLocal(data.getString(EXTRA_LOCAL));
+                auxMatch.setAway(data.getString(EXTRA_AWAY));
+                auxMatch.setLocalScore(Integer.getInteger(data.getString(EXTRA_LOCAL_SCORE)));
+                auxMatch.setAwayScore(Integer.getInteger(data.getString(EXTRA_AWAY_SCORE)));
+                auxMatch.setStatus(data.getString(EXTRA_STATUS));
+                auxMatch.appendLine(data.getString(EXTRA_COMMENT));
+            } else {
+                auxMatch = new Match(data.getString(EXTRA_MATCHID));
+                auxMatch.setLocal(data.getString(EXTRA_LOCAL));
+                auxMatch.setAway(data.getString(EXTRA_AWAY));
+                String aux = data.getString(EXTRA_LOCAL_SCORE);
+                auxMatch.setLocalScore(Integer.parseInt(aux));
+                auxMatch.setAwayScore(Integer.parseInt(data.getString(EXTRA_AWAY_SCORE)));
+                auxMatch.setStatus(data.getString(EXTRA_STATUS));
+                auxMatch.appendLine(data.getString(EXTRA_COMMENT));
+                matchHlpr.addMatch(auxMatch);
+            }
         }
         // Refres UI sending a LocalBroadcast intent
         Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);

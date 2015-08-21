@@ -1,14 +1,22 @@
 package com.google.android.gcm.GolAGol.logic;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+
+import com.google.android.gcm.GolAGol.model.Topic;
+import com.google.android.gcm.GolAGol.ui.AbstractFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.google.android.gcm.GolAGol.model.Constants.GET_TOPIC_LIST;
@@ -121,17 +129,16 @@ public class ThirdPartyServerHelper {
      * @return JSONArray
      * Contain the list of topics retrieved from the server
      */
-    public void getTopics(AsyncResponse delegate) {
+    public void getTopics(Context context) {
 
-        new AsyncTask<AsyncResponse, Void, Void>() {
-            JSONArray topics = null;
+        new AsyncTask<Context, Void, Void>() {
             String responseBody;
-            public AsyncResponse mDelegate = null;
+            public Context mContext = null;
 
             @Override
-            protected Void doInBackground(AsyncResponse... params) {
+            protected Void doInBackground(Context... params) {
 
-                mDelegate = params[0];
+                mContext = params[0];
                 HttpRequest httpRequest = new HttpRequest();
                 try {
                     httpRequest.doGet(SERVER_URL_ROOT + GET_TOPIC_LIST);
@@ -145,11 +152,30 @@ public class ThirdPartyServerHelper {
 
             @Override
             protected void onPostExecute(Void result) {
-                //do stuff
-                mDelegate.processFinish(responseBody);
+                try {
+                    JSONArray resultArray = new JSONArray(responseBody);
+                    List<Topic> mListTopics = new ArrayList<>();
+                    if (resultArray != null) {
+                        for (int i = 0; i < resultArray.length(); i++) {
+                            JSONObject j = resultArray.optJSONObject(i);
+                            try {
+                                mListTopics.add(new Topic(j.getString("name"), j.getString("url")));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                    TopicHelper.getInstance().setListTopics(mListTopics);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                // Refres UI sending a LocalBroadcast intent
+                Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
+                LocalBroadcastManager.getInstance(mContext).sendBroadcast(localIntent);
+                //mContext.processFinish(responseBody);
             }
 
-        }.execute(delegate);
+        }.execute(context);
     }
 
 

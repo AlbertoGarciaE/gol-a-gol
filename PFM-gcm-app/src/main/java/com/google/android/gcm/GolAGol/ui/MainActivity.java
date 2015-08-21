@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         }
                         break;
                     case AbstractFragment.ACTION_REFRESH_UI:
-                        //TODO refresh fragment MatchFragment
                         List<Fragment> fragments2 = getSupportFragmentManager().getFragments();
                         for (Fragment fragment : fragments2) {
                             if (fragment instanceof RefreshableFragment && fragment.isVisible()) {
