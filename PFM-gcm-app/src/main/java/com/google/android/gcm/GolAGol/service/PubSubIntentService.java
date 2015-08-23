@@ -4,11 +4,15 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import com.google.android.gcm.GolAGol.logic.MatchHelper;
 import com.google.android.gcm.GolAGol.logic.TopicHelper;
+import com.google.android.gcm.GolAGol.model.Constants;
 import com.google.android.gcm.GolAGol.ui.AbstractFragment;
+import com.google.android.gcm.GolAGol.ui.MatchFragment;
 import com.google.android.gms.gcm.GcmPubSub;
 
 import java.io.IOException;
@@ -118,6 +122,9 @@ public class PubSubIntentService extends IntentService {
                     + "\ntopic: " + topic);
             // Update topic list
             mTopics.updateTopicSubscriptionState(topic, false);
+            //TODO eliminar el match al que ya no estamos subscrito a sus notificaciones
+            MatchHelper.getInstance().removeMatch(topic);
+            //PreferenceManager.getDefaultSharedPreferences(this).edit().remove(MatchFragment.PREF_MATCHES_LIST).apply();
             // Refres UI sending a LocalBroadcast intent
             Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
             LocalBroadcastManager.getInstance(context).sendBroadcast(localIntent);

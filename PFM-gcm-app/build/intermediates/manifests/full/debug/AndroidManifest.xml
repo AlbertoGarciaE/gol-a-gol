@@ -74,12 +74,6 @@ limitations under the License.
             </intent-filter>
         </service>
         <service
-            android:name="com.google.android.gcm.GolAGol.service.LoggingService"
-            android:exported="false" />
-        <service
-            android:name="com.google.android.gcm.GolAGol.service.RegistrationIntentService"
-            android:exported="false" />
-        <service
             android:name="com.google.android.gcm.GolAGol.service.MyInstanceIDListenerService"
             android:exported="false" >
             <intent-filter>
@@ -87,12 +81,14 @@ limitations under the License.
             </intent-filter>
         </service>
         <service
+            android:name="com.google.android.gcm.GolAGol.service.RegistrationIntentService"
+            android:exported="false" />
+        <service
             android:name="com.google.android.gcm.GolAGol.service.SportEventHandler"
             android:exported="false" />
         <service
             android:name="com.google.android.gcm.GolAGol.service.PubSubIntentService"
-            android:exported="false" >
-        </service>
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.gms.version"

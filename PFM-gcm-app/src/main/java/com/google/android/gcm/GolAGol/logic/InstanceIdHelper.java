@@ -57,33 +57,6 @@ public class InstanceIdHelper {
         Intent intent = new Intent(mContext, RegistrationIntentService.class);
         intent.setAction(RegistrationIntentService.REGISTRATION_I_S_ACTION_ERASE_TOKEN);
         mContext.startService(intent);
-//        new AsyncTask<Void, Void, Void>() {
-//            @Override
-//            protected Void doInBackground(Void... params) {
-//                String senderId = mContext.getString(R.string.gcm_MyServer_SenderId);
-//                String token = PreferenceManager.getDefaultSharedPreferences(mContext).getString(Constants.GCM_TOKEN, "");
-//                boolean alreadyRegistered = PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean(Constants.SENT_TOKEN_TO_SERVER, false);
-//                try {
-//                    if (alreadyRegistered) {
-//                        InstanceID.getInstance(mContext).deleteToken(senderId,
-//                                GoogleCloudMessaging.INSTANCE_ID_SCOPE);
-//                        //Delete from server
-//                        thirdPartyServer.removeRegistrationFromServer(token);
-//                        mLogger.log(Log.INFO, "delete token succeeded." +
-//                                "\nsenderId: " + senderId);
-//                        sharedPreferences.edit().putBoolean(Constants.SENT_TOKEN_TO_SERVER, false).apply();
-//                    } else {
-//                        mLogger.log(Log.INFO, "remove token failed." +
-//                                "\nsenderId: " + senderId + "\nerror: No Token present in preferences, probably you did not get one yet");
-//                    }
-//                } catch (final Exception e) {
-//                    mLogger.log(Log.INFO, "remove token failed." +
-//                            "\nsenderId: " + senderId + "\nerror: " + e.getMessage());
-//                    sharedPreferences.edit().putBoolean(Constants.SENT_TOKEN_TO_SERVER, true).apply();
-//                }
-//                return null;
-//            }
-//        }.execute();
     }
 
 

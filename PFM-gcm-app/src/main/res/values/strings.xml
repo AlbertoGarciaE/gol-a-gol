@@ -18,19 +18,17 @@ limitations under the License.
     <string name="main_activity_title_prefix">"GaG: "</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-    <string name="logs">Logs</string>
-
+    <string name="logs">Minuto a minuto</string>
     <string name="gcm_MyServer_SenderId">243839256156</string>
 
     <!-- Main Menu -->
-    <string name="main_menu_instanceid">Registrations</string>
-    <string name="main_menu_topics">Topics</string>
-    <string name="main_menu_matches">Matches</string>
+    <string name="main_menu_instanceid">Registro</string>
+    <string name="main_menu_topics">Subscripciones</string>
+    <string name="main_menu_matches">Partidos</string>
 
     <!-- Overflow Menu -->
     <string name="show_logs">Show Logs</string>
     <string name="hide_logs">Hide Logs</string>
-    <string name="clear_logs">Clear logs</string>
 
     <!-- Instance Id Fragment -->
     <string name="iid_register">Registrarse</string>
@@ -53,8 +51,8 @@ limitations under the License.
     <string name="topics_unsubscribe">Borrar</string>
     <string name="topics_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
     <string name="topics_already_subscribed">Ya te subscribiste.</string>
-    <string name="topics_subscribing">Subscribing %1$s</string>
-    <string name="topics_unsubscribing">Unsubscribing from %1$s</string>
+    <string name="topics_subscribing">Subscribiendose %1$s</string>
+    <string name="topics_unsubscribing">Borrando subscripcion de %1$s</string>
     <string name="topics_no_topic_subscribed">No hay partidos disponibles</string>
 
 
@@ -64,10 +62,9 @@ limitations under the License.
     <string name="matches_show_log">Ver</string>
     <string name="matches_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
     <string name="matches_already_subscribed">Ya te subscribiste.</string>
-    <string name="matches_subscribing">Subscribing %1$s</string>
-    <string name="matches_unsubscribing">Unsubscribing from %1$s</string>
+    <string name="matches_subscribing">Subscribiendose a %1$s</string>
+    <string name="matches_unsubscribing">Borrando subscripción de %1$s</string>
     <string name="matches_no_topic_subscribed">No hay partidos disponibles, suscribete a un partido para recibir informacion al instante</string>
 
-    <string name="notification_intent_received">Received notification intent: %1s</string>
 
 </resources>

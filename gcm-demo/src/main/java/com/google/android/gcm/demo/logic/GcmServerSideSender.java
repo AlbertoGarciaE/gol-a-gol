@@ -146,7 +146,7 @@ public class GcmServerSideSender {
      * Send a downstream message via HTTP JSON.
      *
      * @param destination the registration id of the recipient app.
-     * @param message        the message to be sent
+     * @param message     the message to be sent
      * @throws IOException
      */
     public void sendHttpJsonDownstreamMessage(String destination,
@@ -173,6 +173,7 @@ public class GcmServerSideSender {
             return;
         }
 
+        Log.i("NOTIFICACIONAGE", jsonBody.toString());
         HttpRequest httpRequest = new HttpRequest();
         httpRequest.setHeader(HEADER_CONTENT_TYPE, CONTENT_TYPE_JSON);
         httpRequest.setHeader(HEADER_AUTHORIZATION, "key=" + key);

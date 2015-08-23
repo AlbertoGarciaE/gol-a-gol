@@ -2,18 +2,24 @@ package com.google.android.gcm.GolAGol.logic;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import com.google.android.gcm.GolAGol.model.Constants;
 import com.google.android.gcm.GolAGol.model.Topic;
 import com.google.android.gcm.GolAGol.ui.AbstractFragment;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -153,6 +159,7 @@ public class ThirdPartyServerHelper {
             @Override
             protected void onPostExecute(Void result) {
                 try {
+                    TopicHelper mTopics = TopicHelper.getInstance();
                     JSONArray resultArray = new JSONArray(responseBody);
                     List<Topic> mListTopics = new ArrayList<>();
                     if (resultArray != null) {
@@ -165,17 +172,39 @@ public class ThirdPartyServerHelper {
                             }
                         }
                     }
-                    TopicHelper.getInstance().setListTopics(mListTopics);
+                    Log.d(TAG, "New fresh topic list obtained from server");
+                    mTopics.setListTopics(mListTopics);
+                    //Update list with stored shared preferences for topics
+                    Log.d(TAG, "Update new list of topics from server with stored preferences");
+                    SharedPreferences appSharedPrefs = PreferenceManager
+                            .getDefaultSharedPreferences(mContext);
+                    String json = appSharedPrefs.getString(Constants.PREF_TOPIC_LIST, "");
+                    if (!json.isEmpty()) {
+                        Gson gson = new Gson();
+                        Type type = new TypeToken<List<Topic>>() {
+                        }.getType();
+                        List<Topic> subscribedTopics = gson.fromJson(json, type);
+                        Log.d(TAG, "Saved Topics subscribed " + subscribedTopics.size());
+                        for (Topic topic : subscribedTopics) {
+                            mTopics.updateTopicSubscriptionState(topic.getUrl(), topic.isSubscribed());
+                        }
+                        //mTopics.setListTopics(subscribedTopics);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 // Refres UI sending a LocalBroadcast intent
                 Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
                 LocalBroadcastManager.getInstance(mContext).sendBroadcast(localIntent);
                 //mContext.processFinish(responseBody);
             }
 
-        }.execute(context);
+        }
+
+                .
+
+                        execute(context);
     }
 
 

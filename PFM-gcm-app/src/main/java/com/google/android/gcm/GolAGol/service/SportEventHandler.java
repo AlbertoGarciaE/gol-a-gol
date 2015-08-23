@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 
 import com.google.android.gcm.GolAGol.logic.MatchHelper;
 import com.google.android.gcm.GolAGol.model.Match;
@@ -18,8 +19,8 @@ import com.google.android.gcm.GolAGol.ui.AbstractFragment;
  */
 public class SportEventHandler extends IntentService {
 
-    private static final String ACTION_SCORE = "com.google.android.gcm.demo.service.action.SCORE";
-    private static final String ACTION_REGULAR_ACTION = "com.google.android.gcm.demo.service.action.REGULAR_ACTION";
+    private static final String ACTION_SCORE = "com.google.android.gcm.GolAGol.service.action.SCORE";
+    private static final String ACTION_REGULAR_ACTION = "com.google.android.gcm.GolAGol.service.action.REGULAR_ACTION";
 
     public static final String EXTRA_MATCHID = "matchId";
     public static final String EXTRA_LOCAL = "local";
@@ -28,6 +29,7 @@ public class SportEventHandler extends IntentService {
     public static final String EXTRA_AWAY_SCORE = "awayScore";
     public static final String EXTRA_STATUS = "status";
     public static final String EXTRA_COMMENT = "comment";
+    private static final String TAG = "SportEventHandler";
     private MatchHelper matchHlpr = MatchHelper.getInstance();
 
     /**
@@ -73,7 +75,7 @@ public class SportEventHandler extends IntentService {
     }
 
     public SportEventHandler() {
-        super("SportEventHandler");
+        super(TAG);
     }
 
     @Override
@@ -109,24 +111,48 @@ public class SportEventHandler extends IntentService {
      */
     private void handleActionScore(Bundle data) {
         String matchId = data.getString(EXTRA_MATCHID);
-        Match auxMatch = matchHlpr.getMatch(matchId);
-        //TODO format comments
-        if (auxMatch != null) {
-            auxMatch.setLocal(data.getString(EXTRA_LOCAL));
-            auxMatch.setAway(data.getString(EXTRA_AWAY));
-            auxMatch.setLocalScore(Integer.getInteger(data.getString(EXTRA_LOCAL_SCORE)));
-            auxMatch.setAwayScore(Integer.getInteger(data.getString(EXTRA_AWAY_SCORE)));
-            auxMatch.setStatus(data.getString(EXTRA_STATUS));
-            auxMatch.appendLine(data.getString(EXTRA_COMMENT));
+        if (matchId != null && !matchId.isEmpty()) {
+            Match auxMatch = matchHlpr.getMatch(matchId);
+            if (auxMatch != null) {
+                Log.d(TAG, "Match already exist, update it with notification match information");
+                String newLocal = data.getString(EXTRA_LOCAL);
+                if (!newLocal.isEmpty() && newLocal != null) {
+                    auxMatch.setLocal(newLocal);
+                }
+                String newAway = data.getString(EXTRA_AWAY);
+                if (!newAway.isEmpty() && newAway != null) {
+                    auxMatch.setAway(newAway);
+                }
+                String newLocalScore = data.getString(EXTRA_LOCAL_SCORE);
+                if (!newLocalScore.isEmpty() && newLocalScore != null) {
+                    auxMatch.setLocalScore(Integer.parseInt(newLocalScore));
+                }
+                String newAwayScore = data.getString(EXTRA_AWAY_SCORE);
+                if (!newAwayScore.isEmpty() && newAwayScore != null) {
+                    auxMatch.setAwayScore(Integer.parseInt(newAwayScore));
+                }
+                String newStatus = data.getString(EXTRA_STATUS);
+                if (!newStatus.isEmpty() && newStatus != null) {
+                    auxMatch.setStatus(newStatus);
+                }
+                String newLine = data.getString(EXTRA_COMMENT);
+                if (!newLine.isEmpty() && newLine != null) {
+                    auxMatch.appendLine(newLine);
+                }
+            } else {
+                Log.d(TAG, "Creating new match with notification match information");
+                auxMatch = new Match(data.getString(EXTRA_MATCHID));
+                auxMatch.setLocal(data.getString(EXTRA_LOCAL));
+                auxMatch.setAway(data.getString(EXTRA_AWAY));
+                String aux = data.getString(EXTRA_LOCAL_SCORE);
+                auxMatch.setLocalScore(Integer.parseInt(aux));
+                auxMatch.setAwayScore(Integer.parseInt(data.getString(EXTRA_AWAY_SCORE)));
+                auxMatch.setStatus(data.getString(EXTRA_STATUS));
+                auxMatch.appendLine(data.getString(EXTRA_COMMENT));
+                matchHlpr.addMatch(auxMatch);
+            }
         } else {
-            auxMatch = new Match(data.getString(EXTRA_MATCHID));
-            auxMatch.setLocal(data.getString(EXTRA_LOCAL));
-            auxMatch.setAway(data.getString(EXTRA_AWAY));
-            auxMatch.setLocalScore(Integer.getInteger(data.getString(EXTRA_LOCAL_SCORE)));
-            auxMatch.setAwayScore(Integer.getInteger(data.getString(EXTRA_AWAY_SCORE)));
-            auxMatch.setStatus(data.getString(EXTRA_STATUS));
-            auxMatch.appendLine(data.getString(EXTRA_COMMENT));
-            matchHlpr.addMatch(auxMatch);
+            Log.d(TAG, "Notification contains no match information, drop it");
         }
         // Refres UI sending a LocalBroadcast intent
         Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
@@ -141,15 +167,34 @@ public class SportEventHandler extends IntentService {
         String matchId = data.getString(EXTRA_MATCHID);
         if (matchId != null && !matchId.isEmpty()) {
             Match auxMatch = matchHlpr.getMatch(matchId);
-            //TODO format comments
             if (auxMatch != null) {
-                auxMatch.setLocal(data.getString(EXTRA_LOCAL));
-                auxMatch.setAway(data.getString(EXTRA_AWAY));
-                auxMatch.setLocalScore(Integer.getInteger(data.getString(EXTRA_LOCAL_SCORE)));
-                auxMatch.setAwayScore(Integer.getInteger(data.getString(EXTRA_AWAY_SCORE)));
-                auxMatch.setStatus(data.getString(EXTRA_STATUS));
-                auxMatch.appendLine(data.getString(EXTRA_COMMENT));
+                Log.d(TAG, "Match already exist, update it with notification match information");
+                String newLocal = data.getString(EXTRA_LOCAL);
+                if (!newLocal.isEmpty() && newLocal != null) {
+                    auxMatch.setLocal(newLocal);
+                }
+                String newAway = data.getString(EXTRA_AWAY);
+                if (!newAway.isEmpty() && newAway != null) {
+                    auxMatch.setAway(newAway);
+                }
+                String newLocalScore = data.getString(EXTRA_LOCAL_SCORE);
+                if (!newLocalScore.isEmpty() && newLocalScore != null) {
+                    auxMatch.setLocalScore(Integer.parseInt(newLocalScore));
+                }
+                String newAwayScore = data.getString(EXTRA_AWAY_SCORE);
+                if (!newAwayScore.isEmpty() && newAwayScore != null) {
+                    auxMatch.setAwayScore(Integer.parseInt(newAwayScore));
+                }
+                String newStatus = data.getString(EXTRA_STATUS);
+                if (!newStatus.isEmpty() && newStatus != null) {
+                    auxMatch.setStatus(newStatus);
+                }
+                String newLine = data.getString(EXTRA_COMMENT);
+                if (!newLine.isEmpty() && newLine != null) {
+                    auxMatch.appendLine(newLine);
+                }
             } else {
+                Log.d(TAG, "Creating new match with notification match information");
                 auxMatch = new Match(data.getString(EXTRA_MATCHID));
                 auxMatch.setLocal(data.getString(EXTRA_LOCAL));
                 auxMatch.setAway(data.getString(EXTRA_AWAY));
@@ -160,6 +205,8 @@ public class SportEventHandler extends IntentService {
                 auxMatch.appendLine(data.getString(EXTRA_COMMENT));
                 matchHlpr.addMatch(auxMatch);
             }
+        } else {
+            Log.d(TAG, "Notification contains no match information, drop it");
         }
         // Refres UI sending a LocalBroadcast intent
         Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);

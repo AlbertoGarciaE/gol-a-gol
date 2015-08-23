@@ -33,8 +33,17 @@ public class MatchHelper {
         return this.matchList.add(match);
     }
 
-    public boolean removeMatch(Match match) {
-        return this.matchList.remove(match);
+    public boolean removeMatch(String id) {
+        Match aux = getMatch(id);
+        boolean result = false;
+        if (aux != null) {
+            result = this.matchList.remove(aux);
+        }
+        return result;
+    }
+
+    public void clearMatchList() {
+        this.matchList.clear();
     }
 
     public Match getMatch(String id) {
@@ -46,5 +55,9 @@ public class MatchHelper {
             aux = null;
         }
         return aux;
+    }
+
+    public void initMatchList(List<Match> list) {
+        this.matchList = new ArrayList<>(list);
     }
 }

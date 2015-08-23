@@ -21,9 +21,15 @@ public class Constants {
 
     public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";
     public static final String GCM_TOKEN = "gcmToken";
+    public static final String USER_NAME = "userName";
     public static final String REGISTRATION_COMPLETE = "registrationComplete";
     public static final int TOKEN_ACTION_GET = 1;
     public static final int TOKEN_ACTION_ERASE = 0;
+
+    //Services actions
+
+    //Shared preferences
+    public static final String PREF_TOPIC_LIST = "listOfTopics";
 
     //RESTfull service paths
     public static final String REGISTER_IN_SERVER = "/RESTService/registerDevice";

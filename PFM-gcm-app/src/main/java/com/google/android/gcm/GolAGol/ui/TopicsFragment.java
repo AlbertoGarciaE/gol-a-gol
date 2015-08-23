@@ -55,7 +55,6 @@ public class TopicsFragment extends AbstractFragment
     private static final String ACTION_UNSUBSCRIBE = "actionUnsubscribe";
     private static final String ACTION_SUBSCRIBE = "actionSubscribe";
 
-    private static final String PREF_TOPIC_LIST = "listOfTopics";
     private static final String TAG = "TopicsFragment";
 
     private Context mContext;
@@ -73,6 +72,7 @@ public class TopicsFragment extends AbstractFragment
         description.setMovementMethod(LinkMovementMethod.getInstance());
         description.setText(Html.fromHtml(getActivity().getString(R.string.topics_description)));
 
+        Log.d(TAG,"Get topics from the server");
         mThirdpartyServer.getTopics(mContext);
 
         return view;
@@ -80,13 +80,15 @@ public class TopicsFragment extends AbstractFragment
 
     @Override
     public void onStart() {
-        refresh();
         super.onStart();
+       // getSubscribedTopicListFromPreferences();
+        refresh();
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        saveToPreferenceSubscribedTopics();
     }
 
     @Override
@@ -96,12 +98,11 @@ public class TopicsFragment extends AbstractFragment
         } else if (ACTION_SUBSCRIBE.equals(v.getTag(R.id.tag_action))) {
             subscribe(v);
         }
-        saveToPreferenceSubscribedTopics();
+
     }
 
     @Override
     public void refresh() {
-        getSubscribedTopicListFromPreferences();
         showTopics();
     }
 
@@ -158,6 +159,9 @@ public class TopicsFragment extends AbstractFragment
         String topic = (String) v.getTag(R.id.tag_topic);
         String gcmToken = PreferenceManager.getDefaultSharedPreferences(mContext).getString(Constants.GCM_TOKEN, "");
         if (gcmToken == null || gcmToken.isEmpty()) {
+            Toast.makeText(getActivity(), "Necesitas registrarte antes de poder subscribirte a un partido",
+                    Toast.LENGTH_SHORT)
+                    .show();
             Log.d(TAG, "gcmToken missing while subscribing to topic.");
         } else {
             PubSubIntentService.subscribeTopic(mContext, topic, gcmToken);
@@ -184,20 +188,23 @@ public class TopicsFragment extends AbstractFragment
 
     private void saveToPreferenceSubscribedTopics() {
         List<Topic> subscribed = mTopics.getSubscribedTopics();
+        Log.d(TAG, "Number of Topics subscribed that we are going to save " + subscribed.size());
         Gson gson = new Gson();
         String json = gson.toJson(subscribed);
-        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putString(PREF_TOPIC_LIST, json).apply();
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putString(Constants.PREF_TOPIC_LIST, json).apply();
+
     }
 
     private void getSubscribedTopicListFromPreferences() {
         SharedPreferences appSharedPrefs = PreferenceManager
                 .getDefaultSharedPreferences(mContext);
-        String json = appSharedPrefs.getString(PREF_TOPIC_LIST, "");
+        String json = appSharedPrefs.getString(Constants.PREF_TOPIC_LIST, "");
         if (!json.isEmpty()) {
             Gson gson = new Gson();
             Type type = new TypeToken<List<Topic>>() {
             }.getType();
             List<Topic> subscribedTopics = gson.fromJson(json, type);
+            Log.d(TAG, "Saved Topics subscribed " + subscribedTopics.size());
             for (Topic topic : subscribedTopics) {
                 mTopics.updateTopicSubscriptionState(topic.getUrl(), topic.isSubscribed());
             }

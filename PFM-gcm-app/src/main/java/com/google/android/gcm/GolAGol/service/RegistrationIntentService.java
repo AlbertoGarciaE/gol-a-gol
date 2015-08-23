@@ -23,13 +23,17 @@ import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import com.google.android.gcm.GolAGol.logic.MatchHelper;
 import com.google.android.gcm.GolAGol.logic.ThirdPartyServerHelper;
 import com.google.android.gcm.GolAGol.R;
+import com.google.android.gcm.GolAGol.logic.TopicHelper;
 import com.google.android.gcm.GolAGol.model.Constants;
+import com.google.android.gcm.GolAGol.model.Topic;
 import com.google.android.gcm.GolAGol.ui.AbstractFragment;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -102,6 +106,7 @@ public class RegistrationIntentService extends IntentService {
                         if (thirdPartyServer.sendRegistrationToServer(deviceName, token)) {
                             sharedPreferences.edit().putBoolean(Constants.SENT_TOKEN_TO_SERVER, true).apply();
                             sharedPreferences.edit().putString(Constants.GCM_TOKEN, token).apply();
+                            sharedPreferences.edit().putString(Constants.USER_NAME, deviceName).apply();
                             Log.d(TAG, "Success: token obtained and persisted in server");
                         }
                         // [END register_for_gcm]
@@ -122,15 +127,28 @@ public class RegistrationIntentService extends IntentService {
             String senderId = this.getString(R.string.gcm_MyServer_SenderId);
             String token = sharedPreferences.getString(Constants.GCM_TOKEN, "");
             try {
+
                 InstanceID.getInstance(this).deleteToken(senderId,
                         GoogleCloudMessaging.INSTANCE_ID_SCOPE);
-                //Delete from server
-                if (thirdPartyServer.removeRegistrationFromServer(token)) {
-                    sharedPreferences.edit().putBoolean(Constants.SENT_TOKEN_TO_SERVER, false).apply();
-                    sharedPreferences.edit().putString(Constants.GCM_TOKEN, "").apply();
-                    Log.d(TAG, "delete token succeeded." +
-                            "\nsenderId: " + senderId);
+                //TODO Unsubscribe from all the topics that currently we are subscribed
+                List<Topic> list = TopicHelper.getInstance().getSubscribedTopics();
+                for (Topic topic : list) {
+                    // Update topic and match list
+                    //TopicHelper.getInstance().updateTopicSubscriptionState(topic.getUrl(), false);
+                    MatchHelper.getInstance().removeMatch(topic.getUrl());
+                    //PubSubIntentService.unsubscribeTopic(this, topic.getUrl(), token);
                 }
+                //TODO borrar las sharedpreferences realcionadas con la subscripcion since we are not longer register
+                sharedPreferences.edit().putBoolean(Constants.SENT_TOKEN_TO_SERVER, false).apply();
+                sharedPreferences.edit().remove(Constants.GCM_TOKEN).apply();
+                sharedPreferences.edit().remove(Constants.USER_NAME).apply();
+                sharedPreferences.edit().remove(Constants.PREF_TOPIC_LIST).apply();
+                //Delete from server
+                thirdPartyServer.removeRegistrationFromServer(token);
+
+                Log.d(TAG, "delete token succeeded." +
+                        "\nsenderId: " + senderId);
+
 
             } catch (final Exception e) {
                 Log.d(TAG, "remove token failed." +

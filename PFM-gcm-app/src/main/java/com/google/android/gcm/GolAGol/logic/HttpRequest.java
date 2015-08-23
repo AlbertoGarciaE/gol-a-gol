@@ -18,7 +18,6 @@ package com.google.android.gcm.GolAGol.logic;
 import android.support.v4.util.SimpleArrayMap;
 import android.util.Log;
 
-import com.google.android.gcm.GolAGol.service.LoggingService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -129,7 +128,7 @@ public class HttpRequest {
      * @throws IOException
      */
     public void doGet(String url) throws IOException {
-        Log.i(LoggingService.LOG_TAG, "HTTP request. ");
+        Log.i(TAG, "HTTP request. ");
 
         HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("GET");

@@ -17,8 +17,10 @@ package com.google.android.gcm.GolAGol.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -34,8 +36,14 @@ import android.widget.TextView;
 import com.google.android.gcm.GolAGol.logic.MatchHelper;
 import com.google.android.gcm.GolAGol.R;
 import com.google.android.gcm.GolAGol.model.Match;
-import com.google.android.gcm.GolAGol.service.LoggingService;
+import com.google.android.gcm.GolAGol.model.Topic;
+
 import com.google.android.gcm.GolAGol.service.SportEventHandler;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * This fragment shows a list of subscribed topics, allowing subscribing to new ones or
@@ -46,14 +54,14 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
     public static final String ACTION_SHOW_LOG = "com.google.android.gcm.demo.ui.actionShowMatchLog";
     public static final String ACTION_HIDE_LOG = "com.google.android.gcm.demo.ui.actionHideMatchLog";
 
+    public static final String PREF_MATCHES_LIST = "listOfMatches";
+
     private MatchHelper mMatchHelper;
-    private LoggingService.Logger mLogger;
     private Context mContext;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedState) {
-        mLogger = new LoggingService.Logger(getActivity());
         mMatchHelper = MatchHelper.getInstance();
         mContext = getActivity().getApplicationContext();
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
@@ -64,10 +72,24 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
         return view;
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // getMatchesListFromPreferences();
+    }
+
     @Override
     public void onStart() {
         super.onStart();
+        //getMatchesListFromPreferences();
         refresh();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //saveToPreferenceMatches();
     }
 
     @Override
@@ -130,14 +152,17 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
                 LayoutMatchList.addView(noTopics);
             }
 
-            FrameLayout topicsView = (FrameLayout) getActivity().findViewById(R.id.matches_list_wrapper);
-            topicsView.removeAllViews();
-            topicsView.addView(LayoutMatchList);
+            FrameLayout matchesView = (FrameLayout) getActivity().findViewById(R.id.matches_list_wrapper);
+            matchesView.removeAllViews();
+            matchesView.addView(LayoutMatchList);
         }
     }
 
+    //TODO OPCIONAL metodo para borrar un partido por si acaso????
+
     private void showMatchLog(View v) {
 
+        //TODO mostrar el banner flotante con las acciones del partido deseado
         // Forward the log to LocalBroadcast subscribers (i.e. UI)
         Intent localIntent = new Intent(ACTION_SHOW_LOG);
         String matchId = (String) v.getTag(R.id.tag_matchId);
@@ -148,6 +173,28 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
         }
         localIntent.putExtra(SportEventHandler.EXTRA_COMMENT, comments);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(localIntent);
+    }
+
+    private void saveToPreferenceMatches() {
+        //TODO ver si funciona el guardar los partidos
+        List<Match> matches = mMatchHelper.getMatchList();
+        Gson gson = new Gson();
+        String json = gson.toJson(matches);
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putString(PREF_MATCHES_LIST, json).apply();
+    }
+
+    private void getMatchesListFromPreferences() {
+        //TODO ver si funciona recuperar los partidos de las sharedpreferences
+        SharedPreferences appSharedPrefs = PreferenceManager
+                .getDefaultSharedPreferences(mContext);
+        String json = appSharedPrefs.getString(PREF_MATCHES_LIST, "");
+        if (!json.isEmpty()) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<Match>>() {
+            }.getType();
+            List<Match> matches = gson.fromJson(json, type);
+            mMatchHelper.initMatchList(matches);
+        }
     }
 
 }

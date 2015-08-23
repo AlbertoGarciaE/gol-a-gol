@@ -115,12 +115,13 @@ public class InstanceIdFragment extends AbstractFragment
         TextView textViewDetails = (TextView) getView().findViewById(R.id.iid_full_token_details);
         boolean alreadyRegistered = PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean(Constants.SENT_TOKEN_TO_SERVER, false);
         String token = PreferenceManager.getDefaultSharedPreferences(mContext).getString(Constants.GCM_TOKEN, "");
+        String name = PreferenceManager.getDefaultSharedPreferences(mContext).getString(Constants.USER_NAME, "");
         if (alreadyRegistered) {
             textViewStatus.setText(R.string.iid_status_exist_token);
-            textViewDetails.setText("Tu ID es " + token);
+            textViewDetails.setText("Hola " + name + "!!! Tu identificador es " + token);
         } else {
             textViewStatus.setText(R.string.iid_status_exist_no_token);
-            textViewDetails.setText("Tu ID es " + token);
+            textViewDetails.setText("No hay detalles de usuario");
         }
     }
 

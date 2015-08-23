@@ -2,6 +2,20 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\gson-2.3-08ef3c8bf86d749bbab26162541bf738853b371c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e0b0c35d02308b270015a74cada4887e2e49b889">
+        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-f6ed184d32ed9d4c32787fa667717abf6ed6a8a6.jar" />
+    </item>
+    <item
         jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -16,25 +30,11 @@
         <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-03918f947c7f41af068c32e8bc31e0205192f49e.jar" />
     </item>
     <item
-        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.1.1\jars\classes.jar"
+        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="e0b0c35d02308b270015a74cada4887e2e49b889">
-        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-f6ed184d32ed9d4c32787fa667717abf6ed6a8a6.jar" />
-    </item>
-    <item
-        jar="C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
-        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\gson-2.3-08ef3c8bf86d749bbab26162541bf738853b371c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-23c4bd8f2582d1e3ef772b5a1a6a5a3c159f7cb9.jar" />
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-fd8648a7c58c4c71ca0b3db94666ac2bdff4ba61.jar" />
     </item>
     <item
         jar="C:\Users\Usuario\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
@@ -44,13 +44,6 @@
         <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-c9476e934a6a7893bd39fe38e01915800184f2c7.jar" />
     </item>
     <item
-        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="22886d910315028a2b34b1ba068c265534ade87a">
-        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-c0e8d0e1bace460a0045f083fa9b70f1b08a1e99.jar" />
-    </item>
-    <item
         jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -58,11 +51,18 @@
         <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-718c54786206237d47ec221867aafea3b82ecf9b.jar" />
     </item>
     <item
-        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
+        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.1.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-fd8648a7c58c4c71ca0b3db94666ac2bdff4ba61.jar" />
+        sha1="22886d910315028a2b34b1ba068c265534ade87a">
+        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-c0e8d0e1bace460a0045f083fa9b70f1b08a1e99.jar" />
+    </item>
+    <item
+        jar="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\pre-dexed\debug\classes-23c4bd8f2582d1e3ef772b5a1a6a5a3c159f7cb9.jar" />
     </item>
 
 </items>

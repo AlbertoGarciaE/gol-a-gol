@@ -19,7 +19,7 @@ import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
 import com.google.android.gcm.GolAGol.R;
-import com.google.android.gcm.GolAGol.service.LoggingService.Logger;
+
 
 import java.util.LinkedHashMap;
 
@@ -61,10 +61,6 @@ public class MainMenu {
                     item.setTitle(R.string.show_logs);
                     item.setIcon(R.drawable.visibility_white);
                 }
-                return true;
-            }
-            case R.id.clear_logs: {
-                (new Logger(mActivity)).clearLogs();
                 return true;
             }
             default:

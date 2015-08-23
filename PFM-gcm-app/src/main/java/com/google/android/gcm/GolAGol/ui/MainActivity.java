@@ -54,7 +54,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gcm.GolAGol.model.Constants;
-import com.google.android.gcm.GolAGol.service.LoggingService;
+
 import com.google.android.gcm.GolAGol.R;
 import com.google.android.gcm.GolAGol.service.RegistrationIntentService;
 import com.google.android.gcm.GolAGol.service.SportEventHandler;
@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private FrameLayout mDrawerView;
     private ListView mDrawerMenu;
     private View mDrawerScrim;
-    private LoggingService.Logger mLogger;
     private TextView mLogsUI;
     private BroadcastReceiver mLoggerCallback;
     private MainMenu mMainMenu;
@@ -87,29 +86,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedState) {
         super.onCreate(savedState);
         setContentView(R.layout.activity_main);
-        mLogger = new LoggingService.Logger(this);
         mLogsUI = (TextView) findViewById(R.id.logs);
         mLoggerCallback = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 switch (intent.getAction()) {
-                    case LoggingService.ACTION_CLEAR_LOGS:
-                        mLogsUI.setText("");
-                        break;
-                    case LoggingService.ACTION_LOG:
-                        StringBuilder stringBuilder = new StringBuilder();
-                        String newLog = intent.getStringExtra(LoggingService.EXTRA_LOG_MESSAGE);
-                        String oldLogs = Html.toHtml(new SpannableString(mLogsUI.getText()));
-                        appendFormattedLogLine(newLog, stringBuilder);
-                        stringBuilder.append(oldLogs);
-                        mLogsUI.setText(Html.fromHtml(stringBuilder.toString()));
-                        List<Fragment> fragments = getSupportFragmentManager().getFragments();
-                        for (Fragment fragment : fragments) {
-                            if (fragment instanceof RefreshableFragment && fragment.isVisible()) {
-                                ((RefreshableFragment) fragment).refresh();
-                            }
-                        }
-                        break;
                     case AbstractFragment.ACTION_REFRESH_UI:
                         List<Fragment> fragments2 = getSupportFragmentManager().getFragments();
                         for (Fragment fragment : fragments2) {
@@ -223,9 +204,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent launchIntent = getIntent();
         if (Constants.NOTIFICATION_OPEN_ACTION.equals(launchIntent.getAction())) {
             Bundle data = launchIntent.getExtras();
-            data.isEmpty(); // Force the bundle to unparcel so that toString() works
-            String format = getResources().getString(R.string.notification_intent_received);
-            mLogger.log(Log.INFO, String.format(format, data));
+            //data.isEmpty(); // Force the bundle to unparcel so that toString() works
+            String Local = data.getString(SportEventHandler.EXTRA_LOCAL);
+            String Away = data.getString(SportEventHandler.EXTRA_AWAY);
+            String LocalScore = data.getString(SportEventHandler.EXTRA_LOCAL_SCORE);
+            String AwayScore = data.getString(SportEventHandler.EXTRA_AWAY_SCORE);
+            String Status = data.getString(SportEventHandler.EXTRA_STATUS);
+            String comment = data.getString(SportEventHandler.EXTRA_COMMENT);
+            String matchId = data.getString(SportEventHandler.EXTRA_MATCHID);
+            SportEventHandler.startActionScore(this, matchId, Local, Away, LocalScore, AwayScore, Status, comment);
+            //String format = getResources().getString(R.string.notification_intent_received);
+            //mLogger.log(Log.INFO, String.format(format, data));
         }
 
         //Check if Google Play Services APK
@@ -262,14 +251,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onResume() {
         super.onResume();
-        StringBuilder logs = new StringBuilder();
-        for (String log : mLogger.getLogsFromFile()) {
-            appendFormattedLogLine(log, logs);
-            logs.append("<br>");
-        }
-        mLogsUI.setText(Html.fromHtml(logs.toString()));
         registerBroadcast();
-        //mLogger.registerCallback(mLoggerCallback);
         //Check if Google Play Services APK
         // Fetch updated Instance ID token and notify our app's server of any changes (if applicable).
         checkPlayServices();
@@ -284,8 +266,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void registerBroadcast() {
         IntentFilter filter = new IntentFilter();
-        filter.addAction(LoggingService.ACTION_CLEAR_LOGS);
-        filter.addAction(LoggingService.ACTION_LOG);
         filter.addAction(AbstractFragment.ACTION_REFRESH_UI);
         filter.addAction(MatchFragment.ACTION_SHOW_LOG);
         LocalBroadcastManager.getInstance(this).registerReceiver(mLoggerCallback, filter);
@@ -339,27 +319,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         logsView.startAnimation(a);
     }
 
-    private void appendFormattedLogLine(String log, StringBuilder stringBuilder) {
-        String[] logLines = log.split("\n");
-        if (logLines.length > 0) {
-            logLines[0] = "<b>" + logLines[0] + "</b>";
-            for (String line : logLines) {
-                if (line.startsWith("exception: ")) {
-                    continue;
-                }
-                int keySeparator = line.indexOf(": ");
-                if (keySeparator > 0) {
-                    stringBuilder
-                            .append("<b>").append(line.substring(0, keySeparator + 1)).append
-                            ("</b>")
-                            .append(line.substring(keySeparator + 1)).append("<br>");
-                } else {
-                    stringBuilder.append(line).append("<br>");
-                }
-            }
-        }
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -395,9 +354,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             mDrawerMenu.setItemChecked(pos + 1, true);
             getAppPreferences().edit().putInt(PREF_LAST_SCREEN_ID, pos).apply();
         } catch (InstantiationException e) {
-            Log.wtf(LoggingService.LOG_TAG, "Error while instantiating the selected fragment", e);
+            Log.wtf(TAG, "Error while instantiating the selected fragment", e);
         } catch (IllegalAccessException e) {
-            Log.wtf(LoggingService.LOG_TAG, "Error while instantiating the selected fragment", e);
+            Log.wtf(TAG, "Error while instantiating the selected fragment", e);
         }
     }
 
@@ -427,7 +386,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onDestroy() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mLoggerCallback);
-        //mLogger.unregisterCallback(mLoggerCallback);
         super.onDestroy();
     }
 
