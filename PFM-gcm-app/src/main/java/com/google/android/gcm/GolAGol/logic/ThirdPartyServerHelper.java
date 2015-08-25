@@ -10,7 +10,6 @@ import android.util.Log;
 
 import com.google.android.gcm.GolAGol.model.Constants;
 import com.google.android.gcm.GolAGol.model.Topic;
-import com.google.android.gcm.GolAGol.ui.AbstractFragment;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -188,16 +187,14 @@ public class ThirdPartyServerHelper {
                         for (Topic topic : subscribedTopics) {
                             mTopics.updateTopicSubscriptionState(topic.getUrl(), topic.isSubscribed());
                         }
-                        //mTopics.setListTopics(subscribedTopics);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
                 // Refres UI sending a LocalBroadcast intent
-                Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
+                Intent localIntent = new Intent(Constants.ACTION_REFRESH_UI);
                 LocalBroadcastManager.getInstance(mContext).sendBroadcast(localIntent);
-                //mContext.processFinish(responseBody);
             }
 
         }

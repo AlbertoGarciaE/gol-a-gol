@@ -1,19 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-Copyright 2015 Google Inc. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="application_name">Gol a Gol</string>
     <string name="main_activity_title_prefix">"GaG: "</string>
     <string name="drawer_open">Open navigation drawer</string>
@@ -23,7 +10,7 @@ limitations under the License.
 
     <!-- Main Menu -->
     <string name="main_menu_instanceid">Registro</string>
-    <string name="main_menu_topics">Subscripciones</string>
+    <string name="main_menu_topics">Suscripciones</string>
     <string name="main_menu_matches">Partidos</string>
 
     <!-- Overflow Menu -->
@@ -45,26 +32,19 @@ limitations under the License.
     <string name="iid_status_token_not_yet_registered">Aun no realizó el registro del dispositivo</string>
 
     <!-- Topics Fragment -->
-    <string name="topics_description">Suscríbete a los partidos de los que deseas recibir informacion minuto a minuto</string>
+    <string name="topics_description">Suscríbete a los partidos de los que deseas recibir información minuto a minuto</string>
     <string name="topics_active_subscriptions">Partidos en curso:</string>
-    <string name="topics_subscribe">Subscribirse</string>
+    <string name="topics_subscribe">Suscribirse</string>
     <string name="topics_unsubscribe">Borrar</string>
     <string name="topics_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
-    <string name="topics_already_subscribed">Ya te subscribiste.</string>
-    <string name="topics_subscribing">Subscribiendose %1$s</string>
-    <string name="topics_unsubscribing">Borrando subscripcion de %1$s</string>
-    <string name="topics_no_topic_subscribed">No hay partidos disponibles</string>
-
+    <string name="topics_subscribing">Suscribiendo %1$s</string>
+    <string name="topics_unsubscribing">Borrando suscripción de %1$s</string>
+    <string name="topics_no_topic_subscribed">No hay partidos disponibles para suscribirse</string>
 
     <!-- Matches Fragment -->
     <string name="matches_description">Tus partidos en directo con informacion minuto a minuto</string>
     <string name="matches_active_subscriptions">Partidos:</string>
     <string name="matches_show_log">Ver</string>
-    <string name="matches_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
-    <string name="matches_already_subscribed">Ya te subscribiste.</string>
-    <string name="matches_subscribing">Subscribiendose a %1$s</string>
-    <string name="matches_unsubscribing">Borrando subscripción de %1$s</string>
-    <string name="matches_no_topic_subscribed">No hay partidos disponibles, suscribete a un partido para recibir informacion al instante</string>
-
+    <string name="matches_no_matches">No hay partidos disponibles, suscribete a un partido para recibir informacion al instante</string>
 
 </resources>

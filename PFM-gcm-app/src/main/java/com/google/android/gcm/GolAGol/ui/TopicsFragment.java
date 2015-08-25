@@ -1,22 +1,6 @@
-/*
-Copyright 2015 Google Inc. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
- */
 package com.google.android.gcm.GolAGol.ui;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -40,39 +24,33 @@ import com.google.android.gcm.GolAGol.model.Constants;
 import com.google.android.gcm.GolAGol.model.Topic;
 import com.google.android.gcm.GolAGol.service.PubSubIntentService;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 /**
- * This fragment shows a list of subscribed topics, allowing subscribing to new ones or
- * unsubscribing from the ones displayed.
+ * This class displays a lis of subscription topics allowing
+ * the user to subscribe\unsubscribe
  */
 public class TopicsFragment extends AbstractFragment
         implements View.OnClickListener, MainActivity.RefreshableFragment {
 
-    private static final String ACTION_UNSUBSCRIBE = "actionUnsubscribe";
-    private static final String ACTION_SUBSCRIBE = "actionSubscribe";
-
     private static final String TAG = "TopicsFragment";
 
     private Context mContext;
-    private ThirdPartyServerHelper mThirdpartyServer;
     private TopicHelper mTopics;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedState) {
         mContext = getActivity().getApplicationContext();
-        mThirdpartyServer = new ThirdPartyServerHelper();
+        ThirdPartyServerHelper mThirdpartyServer = new ThirdPartyServerHelper();
         mTopics = TopicHelper.getInstance();
         View view = inflater.inflate(R.layout.fragment_topics, container, false);
         TextView description = (TextView) view.findViewById(R.id.topics_description);
         description.setMovementMethod(LinkMovementMethod.getInstance());
         description.setText(Html.fromHtml(getActivity().getString(R.string.topics_description)));
 
-        Log.d(TAG,"Get topics from the server");
+        Log.d(TAG, "Get topics from the server");
         mThirdpartyServer.getTopics(mContext);
 
         return view;
@@ -81,7 +59,6 @@ public class TopicsFragment extends AbstractFragment
     @Override
     public void onStart() {
         super.onStart();
-       // getSubscribedTopicListFromPreferences();
         refresh();
     }
 
@@ -93,9 +70,9 @@ public class TopicsFragment extends AbstractFragment
 
     @Override
     public void onClick(View v) {
-        if (ACTION_UNSUBSCRIBE.equals(v.getTag(R.id.tag_action))) {
+        if (Constants.ACTION_UNSUBSCRIBE.equals(v.getTag(R.id.tag_action))) {
             unsubscribe(v);
-        } else if (ACTION_SUBSCRIBE.equals(v.getTag(R.id.tag_action))) {
+        } else if (Constants.ACTION_SUBSCRIBE.equals(v.getTag(R.id.tag_action))) {
             subscribe(v);
         }
 
@@ -128,10 +105,10 @@ public class TopicsFragment extends AbstractFragment
                     label.setText(topic.getUrl());
 
                     if (topic.isSubscribed()) {
-                        button.setTag(R.id.tag_action, ACTION_UNSUBSCRIBE);
+                        button.setTag(R.id.tag_action, Constants.ACTION_UNSUBSCRIBE);
                         button.setText(R.string.topics_unsubscribe);
                     } else {
-                        button.setTag(R.id.tag_action, ACTION_SUBSCRIBE);
+                        button.setTag(R.id.tag_action, Constants.ACTION_SUBSCRIBE);
                         button.setText(R.string.topics_subscribe);
                     }
                     button.setTag(R.id.tag_subscriptionState, topic.isSubscribed());
@@ -144,7 +121,7 @@ public class TopicsFragment extends AbstractFragment
             }
             if (subscribedTopics == 0) {
                 TextView noTopics = new TextView(getActivity());
-                noTopics.setText(R.string.topics_no_topic_subscribed);
+                noTopics.setText(R.string.matches_no_matches);
                 noTopics.setTypeface(null, Typeface.ITALIC);
                 noTopics.setPadding((int) (16 * density), 0, 0, 0);
                 LayoutTopicList.addView(noTopics);
@@ -155,11 +132,16 @@ public class TopicsFragment extends AbstractFragment
         }
     }
 
+    /**
+     * Subscribe to the target topic
+     *
+     * @param v View that was clicked on to fire the call to the function
+     */
     private void subscribe(View v) {
         String topic = (String) v.getTag(R.id.tag_topic);
         String gcmToken = PreferenceManager.getDefaultSharedPreferences(mContext).getString(Constants.GCM_TOKEN, "");
         if (gcmToken == null || gcmToken.isEmpty()) {
-            Toast.makeText(getActivity(), "Necesitas registrarte antes de poder subscribirte a un partido",
+            Toast.makeText(getActivity(), getString(R.string.topics_not_registered),
                     Toast.LENGTH_SHORT)
                     .show();
             Log.d(TAG, "gcmToken missing while subscribing to topic.");
@@ -172,6 +154,11 @@ public class TopicsFragment extends AbstractFragment
         }
     }
 
+    /**
+     * Unsubcribe from the target topic
+     *
+     * @param v View that was clicked on to fire the call to the function
+     */
     private void unsubscribe(View v) {
         String topic = (String) v.getTag(R.id.tag_topic);
         String gcmToken = PreferenceManager.getDefaultSharedPreferences(mContext).getString(Constants.GCM_TOKEN, "");
@@ -186,6 +173,9 @@ public class TopicsFragment extends AbstractFragment
         }
     }
 
+    /**
+     * Save to shared preferences the list of subscribed topics
+     */
     private void saveToPreferenceSubscribedTopics() {
         List<Topic> subscribed = mTopics.getSubscribedTopics();
         Log.d(TAG, "Number of Topics subscribed that we are going to save " + subscribed.size());
@@ -195,20 +185,4 @@ public class TopicsFragment extends AbstractFragment
 
     }
 
-    private void getSubscribedTopicListFromPreferences() {
-        SharedPreferences appSharedPrefs = PreferenceManager
-                .getDefaultSharedPreferences(mContext);
-        String json = appSharedPrefs.getString(Constants.PREF_TOPIC_LIST, "");
-        if (!json.isEmpty()) {
-            Gson gson = new Gson();
-            Type type = new TypeToken<List<Topic>>() {
-            }.getType();
-            List<Topic> subscribedTopics = gson.fromJson(json, type);
-            Log.d(TAG, "Saved Topics subscribed " + subscribedTopics.size());
-            for (Topic topic : subscribedTopics) {
-                mTopics.updateTopicSubscriptionState(topic.getUrl(), topic.isSubscribed());
-            }
-            //mTopics.setListTopics(subscribedTopics);
-        }
-    }
 }

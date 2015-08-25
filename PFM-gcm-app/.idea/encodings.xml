@@ -4,7 +4,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/MatchHelper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/LoggingService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/SportEventHandler.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MainActivity.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

@@ -1,7 +1,7 @@
 package com.google.android.gcm.GolAGol.model;
 
 /**
- * Created by Usuario on 09/08/2015.
+ * This class represents a match and hold all the information necessari
  */
 public class Match {
     private String matchId;
@@ -10,15 +10,15 @@ public class Match {
     private int localScore;
     private int awayScore;
     private String status;
-    private String log ="";
+    private String log = "";
 
-    public static String STATUS_ONGOING="ONGOING";
-    public static String STATUS_HALFTIME="HALFTIME";
-    public static String STATUS_FINISHED="FINISHED";
-    public static String STATUS_TOSTART="TOSTART";
+    public static String STATUS_ONGOING = "ONGOING";
+    public static String STATUS_HALFTIME = "HALFTIME";
+    public static String STATUS_FINISHED = "FINISHED";
+    public static String STATUS_TOSTART = "TOSTART";
 
     public Match(String matchId) {
-        this.matchId = new StringBuilder(matchId).toString();
+        this.matchId = matchId;
     }
 
     public String getMatchId() {
@@ -65,9 +65,8 @@ public class Match {
         this.status = status;
     }
 
-    public void appendLine(String line){
-        StringBuilder builder = new StringBuilder(log);
-        log = builder.append("\n").append(line).toString();
+    public void appendLine(String line) {
+        log = log + "\n" + line;
     }
 
     public String getLog() {
@@ -78,9 +77,7 @@ public class Match {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Match match = (Match) o;
-
         return matchId.equals(match.matchId);
 
     }

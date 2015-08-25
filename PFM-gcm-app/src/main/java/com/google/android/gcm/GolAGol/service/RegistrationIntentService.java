@@ -1,19 +1,3 @@
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- * <p/>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.google.android.gcm.GolAGol.service;
 
 import android.app.IntentService;
@@ -29,7 +13,6 @@ import com.google.android.gcm.GolAGol.R;
 import com.google.android.gcm.GolAGol.logic.TopicHelper;
 import com.google.android.gcm.GolAGol.model.Constants;
 import com.google.android.gcm.GolAGol.model.Topic;
-import com.google.android.gcm.GolAGol.ui.AbstractFragment;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 
@@ -43,10 +26,6 @@ import java.util.Random;
  * id.
  */
 public class RegistrationIntentService extends IntentService {
-
-    //Actions for the intent service
-    public static final String REGISTRATION_I_S_ACTION_GET_TOKEN = "getToken";
-    public static final String REGISTRATION_I_S_ACTION_ERASE_TOKEN = "eraseToken";
 
     // Initial delay before first retry, without jitter.
     private static final int BACKOFF_INITIAL_DELAY = 1000;
@@ -66,7 +45,7 @@ public class RegistrationIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean alreadyRegistered = sharedPreferences.getBoolean(Constants.SENT_TOKEN_TO_SERVER, false);
-        if (REGISTRATION_I_S_ACTION_GET_TOKEN.equals(intent.getAction()) && !alreadyRegistered) {
+        if (Constants.ACTION_REGISTRATION_GET_TOKEN.equals(intent.getAction()) && !alreadyRegistered) {
             try {
                 // In the (unlikely) event that multiple refresh operations occur simultaneously,
                 // ensure that they are processed sequentially.
@@ -123,7 +102,7 @@ public class RegistrationIntentService extends IntentService {
                 Log.d(TAG, "Failed to complete token request", e);
                 sharedPreferences.edit().putBoolean(Constants.SENT_TOKEN_TO_SERVER, false).apply();
             }
-        } else if (REGISTRATION_I_S_ACTION_ERASE_TOKEN.equals(intent.getAction()) && alreadyRegistered) {
+        } else if (Constants.ACTION_REGISTRATION_ERASE_TOKEN.equals(intent.getAction()) && alreadyRegistered) {
             String senderId = this.getString(R.string.gcm_MyServer_SenderId);
             String token = sharedPreferences.getString(Constants.GCM_TOKEN, "");
             try {
@@ -157,8 +136,8 @@ public class RegistrationIntentService extends IntentService {
             }
         }
 
-        // Refres UI sending a LocalBroadcast intent
-        Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
+        // Refresh UI sending a LocalBroadcast intent
+        Intent localIntent = new Intent(Constants.ACTION_REFRESH_UI);
         LocalBroadcastManager.getInstance(this).sendBroadcast(localIntent);
 
     }

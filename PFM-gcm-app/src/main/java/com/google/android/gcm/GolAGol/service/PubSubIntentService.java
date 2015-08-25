@@ -4,15 +4,12 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import com.google.android.gcm.GolAGol.logic.MatchHelper;
 import com.google.android.gcm.GolAGol.logic.TopicHelper;
 import com.google.android.gcm.GolAGol.model.Constants;
-import com.google.android.gcm.GolAGol.ui.AbstractFragment;
-import com.google.android.gcm.GolAGol.ui.MatchFragment;
 import com.google.android.gms.gcm.GcmPubSub;
 
 import java.io.IOException;
@@ -25,40 +22,36 @@ import java.io.IOException;
  */
 public class PubSubIntentService extends IntentService {
 
-    // IntentService can perform this actions
-    private static final String PUBSUB_ACTION_SUBSCRIBE = "com.google.android.gcm.GolAGol.service.action.PUBSUB_ACTION_SUBSCRIBE";
-    private static final String PUBSUB_ACTION_UNSUBSCRIBE = "com.google.android.gcm.GolAGol.service.action.PUBSUB_ACTION_UNSUBSCRIBE";
-
     //Parameter used in the intent service
-    private static final String EXTRA_TOKEN = "com.google.android.gcm.GolAGol.service.extra.TOKEN";
-    private static final String EXTRA_TOPIC = "com.google.android.gcm.GolAGol.service.extra.TOPIC";
+    private static final String EXTRA_TOKEN = "token";
+    private static final String EXTRA_TOPIC = "topic";
     private static final String TAG = "PubSubIntentService";
 
     private TopicHelper mTopics;
 
     /**
-     * Starts this service to perform action Foo with the given parameters. If
+     * Starts this service to perform action Subscribe Topic with the given parameters. If
      * the service is already performing a task this action will be queued.
      *
      * @see IntentService
      */
     public static void subscribeTopic(Context context, String topic, String token) {
         Intent intent = new Intent(context, PubSubIntentService.class);
-        intent.setAction(PUBSUB_ACTION_SUBSCRIBE);
+        intent.setAction(Constants.ACTION_PUBSUB_SUBSCRIBE);
         intent.putExtra(EXTRA_TOPIC, topic);
         intent.putExtra(EXTRA_TOKEN, token);
         context.startService(intent);
     }
 
     /**
-     * Starts this service to perform action Baz with the given parameters. If
+     * Starts this service to perform action Unsubscribe Topic with the given parameters. If
      * the service is already performing a task this action will be queued.
      *
      * @see IntentService
      */
     public static void unsubscribeTopic(Context context, String topic, String token) {
         Intent intent = new Intent(context, PubSubIntentService.class);
-        intent.setAction(PUBSUB_ACTION_UNSUBSCRIBE);
+        intent.setAction(Constants.ACTION_PUBSUB_UNSUBSCRIBE);
         intent.putExtra(EXTRA_TOPIC, topic);
         intent.putExtra(EXTRA_TOKEN, token);
         context.startService(intent);
@@ -73,11 +66,11 @@ public class PubSubIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             final String action = intent.getAction();
-            if (PUBSUB_ACTION_SUBSCRIBE.equals(action)) {
+            if (Constants.ACTION_PUBSUB_SUBSCRIBE.equals(action)) {
                 final String token = intent.getStringExtra(EXTRA_TOKEN);
                 final String topic = intent.getStringExtra(EXTRA_TOPIC);
                 handleSubscribeTopic(this, topic, token);
-            } else if (PUBSUB_ACTION_UNSUBSCRIBE.equals(action)) {
+            } else if (Constants.ACTION_PUBSUB_UNSUBSCRIBE.equals(action)) {
                 final String token = intent.getStringExtra(EXTRA_TOKEN);
                 final String topic = intent.getStringExtra(EXTRA_TOPIC);
                 handleUnsubscribeTopic(this, topic, token);
@@ -86,7 +79,7 @@ public class PubSubIntentService extends IntentService {
     }
 
     /**
-     * Handle action Foo in the provided background thread with the provided
+     * Handle action Subscribe Topic in the provided background thread with the provided
      * parameters.
      */
     private void handleSubscribeTopic(Context context, String topic, String token) {
@@ -99,8 +92,8 @@ public class PubSubIntentService extends IntentService {
                     + "\nextras: " + extras);
             // Update topic list
             mTopics.updateTopicSubscriptionState(topic, true);
-            // Refres UI sending a LocalBroadcast intent
-            Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
+            // Refresh UI sending a LocalBroadcast intent
+            Intent localIntent = new Intent(Constants.ACTION_REFRESH_UI);
             LocalBroadcastManager.getInstance(context).sendBroadcast(localIntent);
         } catch (IOException | IllegalArgumentException e) {
             Log.d(TAG, "topic subscription failed."
@@ -111,7 +104,7 @@ public class PubSubIntentService extends IntentService {
     }
 
     /**
-     * Handle action Baz in the provided background thread with the provided
+     * Handle action Unsubsidised Topic in the provided background thread with the provided
      * parameters.
      */
     private void handleUnsubscribeTopic(Context context, String topic, String token) {
@@ -122,11 +115,9 @@ public class PubSubIntentService extends IntentService {
                     + "\ntopic: " + topic);
             // Update topic list
             mTopics.updateTopicSubscriptionState(topic, false);
-            //TODO eliminar el match al que ya no estamos subscrito a sus notificaciones
             MatchHelper.getInstance().removeMatch(topic);
-            //PreferenceManager.getDefaultSharedPreferences(this).edit().remove(MatchFragment.PREF_MATCHES_LIST).apply();
-            // Refres UI sending a LocalBroadcast intent
-            Intent localIntent = new Intent(AbstractFragment.ACTION_REFRESH_UI);
+            // Refresh UI sending a LocalBroadcast intent
+            Intent localIntent = new Intent(Constants.ACTION_REFRESH_UI);
             LocalBroadcastManager.getInstance(context).sendBroadcast(localIntent);
         } catch (IOException | IllegalArgumentException e) {
             Log.d(TAG, "topic unsubscription failed."

@@ -1,33 +1,14 @@
-/*
-Copyright 2015 Google Inc. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
- */
 package com.google.android.gcm.GolAGol.service;
 
 import android.os.Bundle;
-
 import com.google.android.gms.gcm.GcmListenerService;
 
 
 /**
- * Service used for receiving GCM messages. When a message is received this service will log it.
+ * Service used for receiving GCM messages.
+ * When a message is received this service will create/Update a Match to show the information.
  */
 public class GcmService extends GcmListenerService {
-
-    public GcmService() {
-
-    }
 
     @Override
     public void onMessageReceived(String from, Bundle data) {
@@ -50,10 +31,7 @@ public class GcmService extends GcmListenerService {
     }
 
 
-
-    // Put the message into a notification and post it.
-    // This is just one simple example of what you might choose to do with
-    // a GCM message.
+    // Put the data of the message into a bundle and start the corresponding IntentService.
     private void sendNotificationMatch(Bundle data) {
         String Local = data.getString(SportEventHandler.EXTRA_LOCAL);
         String Away = data.getString(SportEventHandler.EXTRA_AWAY);

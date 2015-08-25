@@ -1,5 +1,8 @@
 package com.google.android.gcm.GolAGol.model;
 
+/**
+ * This class represent a topic that the user can subscribe to
+ */
 public class Topic {
 
     private String name;
@@ -11,38 +14,18 @@ public class Topic {
         this.url = url;
     }
 
-    /**
-     * Obtiene el valor de la propiedad name.
-     *
-     * @return possible object is {@link String }
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Define el valor de la propiedad name.
-     *
-     * @param value allowed object is {@link String }
-     */
     public void setName(String value) {
         this.name = value;
     }
 
-    /**
-     * Obtiene el valor de la propiedad url.
-     *
-     * @return possible object is {@link String }
-     */
     public String getUrl() {
         return url;
     }
 
-    /**
-     * Define el valor de la propiedad url.
-     *
-     * @param value allowed object is {@link String }
-     */
     public void setUrl(String value) {
         this.url = value;
     }
@@ -51,9 +34,7 @@ public class Topic {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Topic topic = (Topic) o;
-
         return url.equals(topic.url);
 
     }

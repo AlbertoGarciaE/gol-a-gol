@@ -1,18 +1,3 @@
-/*
-Copyright 2015 Google Inc. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
- */
 package com.google.android.gcm.GolAGol.ui;
 
 import android.annotation.TargetApi;
@@ -35,8 +20,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
-import android.text.SpannableString;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
@@ -56,7 +39,6 @@ import android.widget.TextView;
 import com.google.android.gcm.GolAGol.model.Constants;
 
 import com.google.android.gcm.GolAGol.R;
-import com.google.android.gcm.GolAGol.service.RegistrationIntentService;
 import com.google.android.gcm.GolAGol.service.SportEventHandler;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -64,11 +46,11 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import java.util.List;
 
 /**
- * Tha app's main activity
+ * Tha app's main activity that contains the different views or fragments
  */
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    static final String PREF_LAST_SCREEN_ID = "selected_screen_id";
-    static final String PREF_OPEN_DRAWER_AT_STARTUP = "open_drawer_at_startup";
+    private static final String PREF_LAST_SCREEN_ID = "selected_screen_id";
+    private static final String PREF_OPEN_DRAWER_AT_STARTUP = "open_drawer_at_startup";
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG = "MainActivity";
@@ -87,19 +69,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedState);
         setContentView(R.layout.activity_main);
         mLogsUI = (TextView) findViewById(R.id.logs);
+        // Broadcast receiver to handle common action such as refresh the UI or open/hide the match log
         mLoggerCallback = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 switch (intent.getAction()) {
-                    case AbstractFragment.ACTION_REFRESH_UI:
-                        List<Fragment> fragments2 = getSupportFragmentManager().getFragments();
-                        for (Fragment fragment : fragments2) {
+                    case Constants.ACTION_REFRESH_UI:
+                        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+                        for (Fragment fragment : fragments) {
                             if (fragment instanceof RefreshableFragment && fragment.isVisible()) {
                                 ((RefreshableFragment) fragment).refresh();
                             }
                         }
                         break;
-                    case MatchFragment.ACTION_SHOW_LOG:
+                    case Constants.ACTION_SHOW_LOG:
                         String aux = intent.getStringExtra(SportEventHandler.EXTRA_COMMENT);
                         if (aux == null) {
                             aux = "";
@@ -266,8 +249,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void registerBroadcast() {
         IntentFilter filter = new IntentFilter();
-        filter.addAction(AbstractFragment.ACTION_REFRESH_UI);
-        filter.addAction(MatchFragment.ACTION_SHOW_LOG);
+        filter.addAction(Constants.ACTION_REFRESH_UI);
+        filter.addAction(Constants.ACTION_SHOW_LOG);
         LocalBroadcastManager.getInstance(this).registerReceiver(mLoggerCallback, filter);
     }
 

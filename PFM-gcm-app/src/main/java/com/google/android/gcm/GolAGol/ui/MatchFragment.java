@@ -1,18 +1,3 @@
-/*
-Copyright 2015 Google Inc. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
- */
 package com.google.android.gcm.GolAGol.ui;
 
 import android.content.Context;
@@ -20,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -33,11 +17,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gcm.GolAGol.logic.MatchHelper;
 import com.google.android.gcm.GolAGol.R;
+import com.google.android.gcm.GolAGol.logic.MatchHelper;
+import com.google.android.gcm.GolAGol.model.Constants;
 import com.google.android.gcm.GolAGol.model.Match;
-import com.google.android.gcm.GolAGol.model.Topic;
-
 import com.google.android.gcm.GolAGol.service.SportEventHandler;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -45,16 +28,13 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
 /**
  * This fragment shows a list of subscribed topics, allowing subscribing to new ones or
  * unsubscribing from the ones displayed.
  */
 public class MatchFragment extends AbstractFragment implements View.OnClickListener, MainActivity.RefreshableFragment {
-
-    public static final String ACTION_SHOW_LOG = "com.google.android.gcm.demo.ui.actionShowMatchLog";
-    public static final String ACTION_HIDE_LOG = "com.google.android.gcm.demo.ui.actionHideMatchLog";
-
-    public static final String PREF_MATCHES_LIST = "listOfMatches";
 
     private MatchHelper mMatchHelper;
     private Context mContext;
@@ -94,7 +74,7 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (ACTION_SHOW_LOG.equals(v.getTag(R.id.tag_action))) {
+        if (Constants.ACTION_SHOW_LOG.equals(v.getTag(R.id.tag_action))) {
             showMatchLog(v);
         }
     }
@@ -106,7 +86,7 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
 
 
     /**
-     * Show the list of topics in the UI
+     * Show the list of matches in the UI
      */
     private void showMatches() {
         int subscribedMatches = 0;
@@ -134,7 +114,7 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
                     String score = match.getLocalScore() + " - " + match.getAwayScore();
                     scoreLabel.setText(score);
                     statusLabel.setText(match.getStatus());
-                    button.setTag(R.id.tag_action, ACTION_SHOW_LOG);
+                    button.setTag(R.id.tag_action, Constants.ACTION_SHOW_LOG);
                     button.setTag(R.id.tag_matchId, match.getMatchId());
                     button.setText(R.string.matches_show_log);
                     button.setOnClickListener(this);
@@ -158,13 +138,14 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
         }
     }
 
-    //TODO OPCIONAL metodo para borrar un partido por si acaso????
-
+    /**
+     * Show the actions of the selected match in the log view
+     *
+     * @param v View that was clicked on to fire the call to the function
+     */
     private void showMatchLog(View v) {
-
-        //TODO mostrar el banner flotante con las acciones del partido deseado
         // Forward the log to LocalBroadcast subscribers (i.e. UI)
-        Intent localIntent = new Intent(ACTION_SHOW_LOG);
+        Intent localIntent = new Intent(Constants.ACTION_SHOW_LOG);
         String matchId = (String) v.getTag(R.id.tag_matchId);
         Match auxMatch = mMatchHelper.getMatch(matchId);
         String comments = "";
@@ -176,19 +157,17 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
     }
 
     private void saveToPreferenceMatches() {
-        //TODO ver si funciona el guardar los partidos
         List<Match> matches = mMatchHelper.getMatchList();
         Gson gson = new Gson();
         String json = gson.toJson(matches);
-        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putString(PREF_MATCHES_LIST, json).apply();
+        getDefaultSharedPreferences(mContext).edit().putString(Constants.PREF_MATCHES_LIST, json).apply();
     }
 
     private void getMatchesListFromPreferences() {
-        //TODO ver si funciona recuperar los partidos de las sharedpreferences
-        SharedPreferences appSharedPrefs = PreferenceManager
-                .getDefaultSharedPreferences(mContext);
-        String json = appSharedPrefs.getString(PREF_MATCHES_LIST, "");
-        if (!json.isEmpty()) {
+        SharedPreferences appSharedPrefs =
+                getDefaultSharedPreferences(mContext);
+        String json = appSharedPrefs.getString(Constants.PREF_MATCHES_LIST, "");
+        if (!(json != null && json.isEmpty())) {
             Gson gson = new Gson();
             Type type = new TypeToken<List<Match>>() {
             }.getType();

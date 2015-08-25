@@ -43,7 +43,7 @@ public class InstanceIdHelper {
     public void getGcmTokenInBackground(String name) {
         // Start IntentService to register this application with GCM.
         Intent intent = new Intent(mContext, RegistrationIntentService.class);
-        intent.setAction(RegistrationIntentService.REGISTRATION_I_S_ACTION_GET_TOKEN);
+        intent.setAction(Constants.ACTION_REGISTRATION_GET_TOKEN);
         intent.putExtra(Constants.REST_PARAM_DEVICE_NAME, name);
         mContext.startService(intent);
 
@@ -55,7 +55,7 @@ public class InstanceIdHelper {
     public void deleteGcmTokeInBackground() {
         // Start IntentService to register this application with GCM.
         Intent intent = new Intent(mContext, RegistrationIntentService.class);
-        intent.setAction(RegistrationIntentService.REGISTRATION_I_S_ACTION_ERASE_TOKEN);
+        intent.setAction(Constants.ACTION_REGISTRATION_ERASE_TOKEN);
         mContext.startService(intent);
     }
 
