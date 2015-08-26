@@ -35,10 +35,7 @@ public class ThirdPartyServerHelper {
     private static final String TAG = "ThirdPartyServerHelper";
 
     /**
-     * Persist registration to third-party servers.
-     * <p/>
-     * Modify this method to associate the user's GCM registration token with any server-side account
-     * maintained by your application.
+     * Persist registration to the application server.
      *
      * @param token The new token.
      * @param name  The name associated to the new token.
@@ -82,10 +79,7 @@ public class ThirdPartyServerHelper {
 
 
     /**
-     * Remove registration from third-party servers.
-     * <p/>
-     * Modify this method to erase the user's GCM registration token associated to any server-side account
-     * maintained by your application.
+     * Remove registration from app server.
      *
      * @param token The token to be erased.
      * @return True if operations ends correctly, False otherwise.
@@ -129,17 +123,23 @@ public class ThirdPartyServerHelper {
 
 
     /**
-     * Get list of topics from the server
-     *
-     * @return JSONArray
-     * Contain the list of topics retrieved from the server
+     * Get list of available subscription topics from the server in background
+     * <p/>
+     * If this task ends correctly, the list of topics is updated with the values obtained from the application server,
+     * the status of the already subscribed topics is updated
+     * and theUI is refreshed.
      */
     public void getTopics(Context context) {
 
-        new AsyncTask<Context, Void, Void>() {
+        AsyncTask<Context, Void, Void> task = new AsyncTask<Context, Void, Void>() {
             String responseBody;
             public Context mContext = null;
 
+            /**
+             * Obtain the list of topics rom server
+             * @param params
+             * @return
+             */
             @Override
             protected Void doInBackground(Context... params) {
 
@@ -155,20 +155,21 @@ public class ThirdPartyServerHelper {
                 return null;
             }
 
+            /**
+             * When we have the list of topics from server as a JSONObject, we update the list of topics and the UI
+             */
             @Override
             protected void onPostExecute(Void result) {
                 try {
                     TopicHelper mTopics = TopicHelper.getInstance();
                     JSONArray resultArray = new JSONArray(responseBody);
                     List<Topic> mListTopics = new ArrayList<>();
-                    if (resultArray != null) {
-                        for (int i = 0; i < resultArray.length(); i++) {
-                            JSONObject j = resultArray.optJSONObject(i);
-                            try {
-                                mListTopics.add(new Topic(j.getString("name"), j.getString("url")));
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                    for (int i = 0; i < resultArray.length(); i++) {
+                        JSONObject j = resultArray.optJSONObject(i);
+                        try {
+                            mListTopics.add(new Topic(j.getString("name"), j.getString("url")));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
                     Log.d(TAG, "New fresh topic list obtained from server");
@@ -178,7 +179,7 @@ public class ThirdPartyServerHelper {
                     SharedPreferences appSharedPrefs = PreferenceManager
                             .getDefaultSharedPreferences(mContext);
                     String json = appSharedPrefs.getString(Constants.PREF_TOPIC_LIST, "");
-                    if (!json.isEmpty()) {
+                    if (!((json != null) && json.isEmpty())) {
                         Gson gson = new Gson();
                         Type type = new TypeToken<List<Topic>>() {
                         }.getType();
@@ -192,17 +193,12 @@ public class ThirdPartyServerHelper {
                     e.printStackTrace();
                 }
 
-                // Refres UI sending a LocalBroadcast intent
+                // Refresh UI sending a LocalBroadcast intent
                 Intent localIntent = new Intent(Constants.ACTION_REFRESH_UI);
                 LocalBroadcastManager.getInstance(mContext).sendBroadcast(localIntent);
             }
 
-        }
-
-                .
-
-                        execute(context);
+        };
+        task.execute(context);
     }
-
-
 }

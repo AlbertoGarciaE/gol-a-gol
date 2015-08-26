@@ -29,52 +29,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dab8e996-0d85-4298-8058-fdc564214e29" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Constants.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/PFM-gcm-app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/PFM-gcm-app-debug-unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/PFM-gcm-app-debug.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/PFM-gcm-app-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/SportEventHandler.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/SportEventHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/build/intermediates/resources/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/AbstractFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/AbstractFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/model/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/model/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/GcmService.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/GcmService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/InstanceIdFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/InstanceIdFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/HttpRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/HttpRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MainMenu.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/model/Match.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/model/Match.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/MyInstanceIDListenerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/MyInstanceIDListenerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/PubSubIntentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/PubSubIntentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/RegistrationIntentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/RegistrationIntentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/SportEventHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/SportEventHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/MatchHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/MatchHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/model/Topic.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/model/Topic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/TopicsFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/TopicsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Usuario.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Usuario.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/activated_background_indicator.xml" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/activated_background_indicator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_main.xml" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_instanceid.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_instanceid.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_matches.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_matches.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_topics.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_topics.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/values/ids.xml" afterPath="$PROJECT_DIR$/src/main/res/values/ids.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/overflow_menu.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/overflow_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu-land/overflow_menu.xml" afterPath="$PROJECT_DIR$/src/main/res/menu-land/overflow_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/overflowmenu.xml" afterPath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/overflowmenu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/widget_icon_match_row.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/widget_icon_match_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/widget_icon_text_button_row.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/widget_icon_text_button_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/TopicHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/TopicHelper.java" />
     </list>
     <ignored path="PFM-gcm-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -139,18 +100,7 @@
     <favorites_list name="PFM-gcm-app" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/model/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55421686">
-              <caret line="20" column="83" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -992,7 +942,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/ResponseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/InstanceIdHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/ThirdPartyServerHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/service/LoggingService.java" />
@@ -1012,9 +961,6 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/MatchHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/HttpRequest.java" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/ids.xml" />
         <option value="$PROJECT_DIR$/src/main/res/menu/overflow_menu.xml" />
@@ -1028,9 +974,7 @@
         <option value="$PROJECT_DIR$/src/main/res/layout-land/activity_main.xml" />
         <option value="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/activated_background_indicator.xml" />
         <option value="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/overflowmenu.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/TopicsFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/AbstractFragment.java" />
@@ -1043,6 +987,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/MyInstanceIDListenerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/RegistrationIntentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/service/GcmService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/TopicHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/MatchHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/HttpRequest.java" />
       </list>
     </option>
   </component>
@@ -1198,76 +1148,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="GolAGol" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PFM-gcm-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PFM-gcm-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GolAGol" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PFM-gcm-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PFM-gcm-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GolAGol" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PFM-gcm-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PFM-gcm-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GolAGol" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1571,7 +1451,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="738" extended-state="1" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31669536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1587,7 +1467,7 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.535284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7383821" sideWeight="0.5030628" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3284839" sideWeight="0.48857144" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3284839" sideWeight="0.48857144" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23752151" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1647,7 +1527,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="94" />
+      <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PFM-gcm-app">
@@ -1735,24 +1615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9171271">
-          <caret line="56" column="61" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/MatchHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22402598">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding>
-            <element signature="e#657#658#0" expanded="false" />
-            <element signature="e#705#706#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar!/com/google/android/gms/gcm/GcmPubSub.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36749116">
@@ -1760,24 +1622,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/TopicHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/22.1.1/support-v4-22.1.1-sources.jar!/android/support/v4/app/Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1813" column="0" selection-start-line="1813" selection-start-column="0" selection-end-line="1813" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/HttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1278626">
-          <caret line="130" column="17" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1954,25 +1802,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6313252">
-          <caret line="197" column="87" selection-start-line="197" selection-start-column="87" selection-end-line="197" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/TopicsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2081,7 +1911,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2117,7 +1947,66 @@
         <state vertical-scroll-proportion="0.24578314">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/TopicHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0650603">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.619277">
+          <caret line="186" column="64" selection-start-line="186" selection-start-column="64" selection-end-line="186" selection-end-column="64" />
+          <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/MatchHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6385542">
+          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+          <folding>
+            <element signature="e#2189#2190#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12289157">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32771084">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.040963855">
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2235#2236#0" expanded="true" />
           </folding>
         </state>
       </provider>

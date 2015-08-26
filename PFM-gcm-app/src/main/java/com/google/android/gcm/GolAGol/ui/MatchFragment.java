@@ -56,20 +56,17 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
-        // getMatchesListFromPreferences();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        //getMatchesListFromPreferences();
         refresh();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        //saveToPreferenceMatches();
     }
 
     @Override
@@ -90,7 +87,6 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
      */
     private void showMatches() {
         int subscribedMatches = 0;
-        //JSONArray result = this.mMatchHelper;
         float density = getActivity().getResources().getDisplayMetrics().density;
         LinearLayout LayoutMatchList = new LinearLayout(getActivity());
         LayoutMatchList.setOrientation(LinearLayout.VERTICAL);
@@ -107,8 +103,8 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
                     TextView scoreLabel = (TextView) row.findViewById(R.id.widget_score);
                     TextView statusLabel = (TextView) row.findViewById(R.id.widget_match_status);
                     Button button = (Button) row.findViewById(R.id.widget_itbr_button);
-                    localIcon.setImageResource(R.drawable.bigtop_updates_grey600);
-                    awayIcon.setImageResource(R.drawable.bigtop_updates_grey600);
+                    localIcon.setImageResource(getResources().getIdentifier(match.getLocal(), null, null));
+                    awayIcon.setImageResource(getResources().getIdentifier(match.getAway(), null, null));
                     localLabel.setText(match.getLocal());
                     awayLabel.setText(match.getAway());
                     String score = match.getLocalScore() + " - " + match.getAwayScore();

@@ -1,23 +1,7 @@
-/*
-Copyright 2015 Google Inc. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
- */
 package com.google.android.gcm.GolAGol.logic;
 
 import android.support.v4.util.SimpleArrayMap;
 import android.util.Log;
-
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,7 +28,8 @@ public class HttpRequest {
 
     /**
      * Add a request header
-     * @param name the header's name
+     *
+     * @param name  the header's name
      * @param value the header's value
      */
     public void setHeader(String name, String value) {
@@ -59,7 +44,6 @@ public class HttpRequest {
     }
 
     /**
-     *
      * @return this request's response body
      */
     public String getResponseBody() {
@@ -68,7 +52,8 @@ public class HttpRequest {
 
     /**
      * Post the request
-     * @param url where to post to
+     *
+     * @param url         where to post to
      * @param requestBody the body of the request
      * @throws IOException
      */
@@ -124,7 +109,8 @@ public class HttpRequest {
 
     /**
      * Get the URL
-     * @param url where to post to
+     *
+     * @param url where to request to
      * @throws IOException
      */
     public void doGet(String url) throws IOException {
