@@ -38,7 +38,8 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
 
     private MatchHelper mMatchHelper;
     private Context mContext;
-
+    public static final int START_TEAM_NAME = 0;
+    public static final int END_TEAM_NAME = 3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedState) {
@@ -103,10 +104,10 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
                     TextView scoreLabel = (TextView) row.findViewById(R.id.widget_score);
                     TextView statusLabel = (TextView) row.findViewById(R.id.widget_match_status);
                     Button button = (Button) row.findViewById(R.id.widget_itbr_button);
-                    localIcon.setImageResource(getResources().getIdentifier(match.getLocal(), null, null));
-                    awayIcon.setImageResource(getResources().getIdentifier(match.getAway(), null, null));
-                    localLabel.setText(match.getLocal());
-                    awayLabel.setText(match.getAway());
+                    localIcon.setImageResource(getResources().getIdentifier(match.getLocal().toLowerCase(), "drawable", getActivity().getPackageName()));
+                    awayIcon.setImageResource(getResources().getIdentifier(match.getAway().toLowerCase(), "drawable", getActivity().getPackageName()));
+                    localLabel.setText(match.getLocal().substring(START_TEAM_NAME, END_TEAM_NAME));
+                    awayLabel.setText(match.getAway().substring(START_TEAM_NAME, END_TEAM_NAME));
                     String score = match.getLocalScore() + " - " + match.getAwayScore();
                     scoreLabel.setText(score);
                     statusLabel.setText(match.getStatus());

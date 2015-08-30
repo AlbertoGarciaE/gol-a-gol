@@ -224,8 +224,6 @@
     <item name="tag_clipboard_value" type="id"/>
     <item name="tag_matchId" type="id"/>
     <item name="tag_subscriptionState" type="id"/>
-    <item name="tag_token" type="id"/>
-    <item name="tag_token_action" type="id"/>
     <item name="tag_topic" type="id"/>
     <item name="tag_topic_name" type="id"/>
     <!-- From: file:/C:/Users/Usuario/git_mobileApps/PFM-gcm-app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
@@ -318,25 +316,20 @@
     <string name="main_activity_title_prefix">"GaG: "</string>
     <string name="main_menu_instanceid">Registro</string>
     <string name="main_menu_matches">Partidos</string>
-    <string name="main_menu_topics">Subscripciones</string>
+    <string name="main_menu_topics">Suscripciones</string>
     <string name="matches_active_subscriptions">Partidos:</string>
-    <string name="matches_already_subscribed">Ya te subscribiste.</string>
     <string name="matches_description">Tus partidos en directo con informacion minuto a minuto</string>
-    <string name="matches_no_topic_subscribed">No hay partidos disponibles, suscribete a un partido para recibir informacion al instante</string>
-    <string name="matches_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
+    <string name="matches_no_matches">No hay partidos disponibles, suscribete a un partido para recibir informacion al instante</string>
     <string name="matches_show_log">Ver</string>
-    <string name="matches_subscribing">Subscribiendose a %1$s</string>
-    <string name="matches_unsubscribing">Borrando subscripción de %1$s</string>
     <string name="show_logs">Show Logs</string>
     <string name="topics_active_subscriptions">Partidos en curso:</string>
-    <string name="topics_already_subscribed">Ya te subscribiste.</string>
-    <string name="topics_description">Suscríbete a los partidos de los que deseas recibir informacion minuto a minuto</string>
-    <string name="topics_no_topic_subscribed">No hay partidos disponibles</string>
+    <string name="topics_description">Suscríbete a los partidos de los que deseas recibir información minuto a minuto</string>
+    <string name="topics_no_topic_subscribed">No hay partidos disponibles para suscribirse</string>
     <string name="topics_not_registered">Tienes que registrarte antes de empezar a recibir información de tus partidos favoritos</string>
-    <string name="topics_subscribe">Subscribirse</string>
-    <string name="topics_subscribing">Subscribiendose %1$s</string>
+    <string name="topics_subscribe">Suscribirse</string>
+    <string name="topics_subscribing">Suscribiendo %1$s</string>
     <string name="topics_unsubscribe">Borrar</string>
-    <string name="topics_unsubscribing">Borrando subscripcion de %1$s</string>
+    <string name="topics_unsubscribing">Borrando suscripción de %1$s</string>
     <string name="user_name_hint">Nombre de usuario</string>
     <!-- From: file:/C:/Users/Usuario/git_mobileApps/PFM-gcm-app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values/values.xml -->
     <eat-comment/>

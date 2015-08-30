@@ -7,38 +7,31 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="com.google.android.gcm.demo" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b53237e-3f82-482d-b869-e28d633d1348" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\classes\debug\com\google\android\gcm\GolAGol\logic\AsyncResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\classes\debug\com\google\android\gcm\GolAGol\logic\PubSubHelper$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\classes\debug\com\google\android\gcm\GolAGol\logic\PubSubHelper$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\classes\debug\com\google\android\gcm\GolAGol\logic\PubSubHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\gradle_project_sync_data.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\res\debug\drawable-xxhdpi\drawer_gcm_logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\res\debug\drawable-xxhdpi\icon2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\res\debug\drawable-xxhdpi\qwqw.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\gcm-demo.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\add_topic.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\downstream.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\groups.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\menu.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\registration1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\registration2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\tasks.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\screenshots\topics.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\src\main\res\drawable-xxhdpi\drawer_gcm_logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\src\main\res\drawable-xxhdpi\icon2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\src\main\res\drawable-xxhdpi\qwqw.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Usuario\git_mobileApps\PFM-gcm-app\build\intermediates\classes\debug\com\google\android\gcm\GolAGol\ui\TopicsFragment$1.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/AbstractFragment.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/AbstractFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/demo/logic/GcmServerSideSender.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/google/android/gcm/demo/logic/GcmServerSideSender.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Constants.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/GcmService.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/GcmService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/HttpRequest.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/HttpRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/InstanceIdFragment.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/InstanceIdFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/InstanceIdHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$1.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$2.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$3.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$4.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$5.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainMenu.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MainMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Match.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Match.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MatchFragment$1.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MatchFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MatchFragment.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/MatchFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/MatchHelper.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/MatchHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/MyInstanceIDListenerService.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/MyInstanceIDListenerService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/outputs/apk/PFM-gcm-app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/outputs/apk/PFM-gcm-app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/outputs/apk/PFM-gcm-app-debug.apk" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/outputs/apk/PFM-gcm-app-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/PubSubIntentService.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/PubSubIntentService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R$drawable.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gms/R$drawable.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gms/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gms/gcm/R$drawable.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gms/gcm/R$drawable.class" />
@@ -53,52 +46,41 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R$style.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R$style.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R$styleable.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/README.md" afterPath="$PROJECT_DIR$/../PFM-gcm-app/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/RegistrationIntentService.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/RegistrationIntentService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/SportEventHandler.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/service/SportEventHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/drawable-xxhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/drawable-xxhdpi/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/TopicsFragment$1.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/TopicsFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper$1.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/ThirdPartyServerHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Topic.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/model/Topic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/TopicHelper.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/logic/TopicHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/TopicsFragment.class" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/classes/debug/com/google/android/gcm/GolAGol/ui/TopicsFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-03918f947c7f41af068c32e8bc31e0205192f49e.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-03918f947c7f41af068c32e8bc31e0205192f49e.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-23c4bd8f2582d1e3ef772b5a1a6a5a3c159f7cb9.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-23c4bd8f2582d1e3ef772b5a1a6a5a3c159f7cb9.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-718c54786206237d47ec221867aafea3b82ecf9b.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-718c54786206237d47ec221867aafea3b82ecf9b.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-c0e8d0e1bace460a0045f083fa9b70f1b08a1e99.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-c0e8d0e1bace460a0045f083fa9b70f1b08a1e99.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-f6ed184d32ed9d4c32787fa667717abf6ed6a8a6.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-f6ed184d32ed9d4c32787fa667717abf6ed6a8a6.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-fd8648a7c58c4c71ca0b3db94666ac2bdff4ba61.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/classes-fd8648a7c58c4c71ca0b3db94666ac2bdff4ba61.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/dex/debug/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/gcm-demo-debug-unaligned.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/gcm-demo-debug-unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/gcm-demo-debug.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/gcm-demo-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/gson-2.3-08ef3c8bf86d749bbab26162541bf738853b371c.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/gson-2.3-08ef3c8bf86d749bbab26162541bf738853b371c.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/drawable-xxhdpi/icon.png" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/drawable-xxhdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/drawable-xxhdpi/icon.png" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/drawable-xxhdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-3f7b35d66ba12aba5b20118cd327bb124fa8150f.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-3f7b35d66ba12aba5b20118cd327bb124fa8150f.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/resources/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-c9476e934a6a7893bd39fe38e01915800184f2c7.jar" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-c9476e934a6a7893bd39fe38e01915800184f2c7.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/../PFM-gcm-app/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/GcmServerSideSender.java" afterPath="$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/GcmServerSideSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/java/com/google/android/gcm/GolAGol/ui/MatchFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/com/google/android/gcm/GolAGol/R.java" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/com/google/android/gcm/GolAGol/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/com/google/android/gms/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/com/google/android/gms/gcm/R.java" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/generated/source/r/debug/com/google/android/gms/gcm/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/java/com/google/android/gcm/GolAGol/service/SportEventHandler.java" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/java/com/google/android/gcm/GolAGol/service/SportEventHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/values/ids.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/values/ids.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/java/com/google/android/gcm/GolAGol/ui/TopicsFragment.java" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/java/com/google/android/gcm/GolAGol/ui/TopicsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/drawable-xxhdpi/activated_background_indicator.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/drawable-xxhdpi/activated_background_indicator.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout-land/activity_main.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout-land/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/fragment_instanceid.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/fragment_instanceid.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/fragment_matches.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/fragment_matches.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/fragment_topics.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/fragment_topics.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/incremental/mergeResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/menu/overflow_menu.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/menu/overflow_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/menu-land/overflow_menu.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/menu-land/overflow_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/drawable-xxhdpi/overflowmenu.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/drawable-xxhdpi/overflowmenu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/widget_icon_match_row.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/widget_icon_match_row.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/layout/widget_icon_match_row.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/src/main/res/layout/widget_icon_match_row.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/widget_icon_text_button_row.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/build/intermediates/res/debug/layout/widget_icon_text_button_row.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PFM-gcm-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../PFM-gcm-app/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -128,11 +110,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80351907">
-              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -143,10 +125,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
-              <folding>
-                <element signature="e#1293#1294#0" expanded="true" />
-                <element signature="e#1346#1347#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,11 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/ui/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.49866667">
+              <caret line="218" column="62" selection-start-line="218" selection-start-column="62" selection-end-line="218" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -994,8 +973,9 @@
     </navigator>
     <panes>
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1096,7 +1076,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1270,11 +1249,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3255814" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32495812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1284,10 +1263,10 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61538464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38190955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38190955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39563107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39561272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1328,6 +1307,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/ui/NotificationFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/GcmServerSideSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/ui/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1501,14 +1512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/GcmServerSideSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/ui/DownstreamFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.79787236">
@@ -1517,10 +1520,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/ui/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1529,17 +1532,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
-          <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/logic/GcmServerSideSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80351907">
-          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/google/android/gcm/demo/ui/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49866667">
+          <caret line="218" column="62" selection-start-line="218" selection-start-column="62" selection-end-line="218" selection-end-column="62" />
           <folding />
         </state>
       </provider>

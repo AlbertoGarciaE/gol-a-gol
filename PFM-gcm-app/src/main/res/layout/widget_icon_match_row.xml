@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/widget_local_icon"
-        android:layout_width="24dp"
-        android:layout_height="22dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:paddingRight="8dp"
         android:paddingTop="6dp" />
 
@@ -16,29 +16,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_weight="0.2"
-        android:text="text" />
+        android:layout_margin="5dp"
+        android:text="Mad" />
 
     <TextView
         android:id="@+id/widget_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_weight="0.2"
-        android:text="text" />
+        android:layout_margin="5dp"
+        android:text="0-0"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/widget_away_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_weight="0.2"
-        android:text="text" />
+        android:layout_margin="5dp"
+        android:text="Bar" />
 
     <ImageView
         android:id="@+id/widget_away_icon"
-        android:layout_width="24dp"
-        android:layout_height="22dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:paddingRight="8dp"
         android:paddingTop="6dp" />
 
@@ -48,14 +49,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="0.2"
-        android:text="text" />
+        android:text="Status" />
 
     <Button
         android:id="@+id/widget_itbr_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
-        android:minHeight="24dp"
+        android:minHeight="40dp"
         android:padding="0dp"
-        android:text="button" />
+        android:text="VER" />
 </LinearLayout>

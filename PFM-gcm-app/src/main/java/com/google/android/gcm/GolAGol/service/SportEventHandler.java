@@ -141,11 +141,11 @@ public class SportEventHandler extends IntentService {
                 //New Match
                 Log.d(TAG, "Creating new match with notification match information");
                 auxMatch = new Match(data.getString(EXTRA_MATCHID));
-                String newLocal = data.getString(EXTRA_LOCAL, "Loc");
+                String newLocal = data.getString(EXTRA_LOCAL, "Local");
                 if (!newLocal.isEmpty()) {
                     auxMatch.setLocal(newLocal);
                 }
-                String newAway = data.getString(EXTRA_AWAY, "Vis");
+                String newAway = data.getString(EXTRA_AWAY, "Visitante");
                 if (!newAway.isEmpty()) {
                     auxMatch.setAway(newAway);
                 }
@@ -214,11 +214,11 @@ public class SportEventHandler extends IntentService {
                 //New Match
                 Log.d(TAG, "Creating new match with notification match information");
                 auxMatch = new Match(data.getString(EXTRA_MATCHID));
-                String newLocal = data.getString(EXTRA_LOCAL, "Loc");
+                String newLocal = data.getString(EXTRA_LOCAL, "Local");
                 if (!newLocal.isEmpty()) {
                     auxMatch.setLocal(newLocal);
                 }
-                String newAway = data.getString(EXTRA_AWAY, "Vis");
+                String newAway = data.getString(EXTRA_AWAY, "Visitante");
                 if (!newAway.isEmpty()) {
                     auxMatch.setAway(newAway);
                 }

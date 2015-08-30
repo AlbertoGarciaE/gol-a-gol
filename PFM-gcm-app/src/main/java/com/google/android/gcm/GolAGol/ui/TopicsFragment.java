@@ -29,7 +29,7 @@ import java.util.List;
 
 /**
  * This class displays a lis of subscription topics allowing
- * the user to subscribe\unsubscribe
+ * the user to subscribe or unsubscribe
  */
 public class TopicsFragment extends AbstractFragment
         implements View.OnClickListener, MainActivity.RefreshableFragment {
