@@ -123,7 +123,7 @@ public class MatchFragment extends AbstractFragment implements View.OnClickListe
 
             if (subscribedMatches == 0) {
                 TextView noTopics = new TextView(getActivity());
-                noTopics.setText(R.string.topics_no_topic_subscribed);
+                noTopics.setText(R.string.matches_no_matches);
                 noTopics.setTypeface(null, Typeface.ITALIC);
                 noTopics.setPadding((int) (16 * density), 0, 0, 0);
                 LayoutMatchList.addView(noTopics);
